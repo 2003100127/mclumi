@@ -6,19 +6,30 @@ __maintainer__ = "Jianfeng Sun"
 __email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
-import time
 import pandas as pd
+from pyfiglet import Figlet
 
 from mclumi.deduplicate.OnePos import OnePos as onepos
 
+from mclumi.util.Console import Console
+
+vignette1 = Figlet(font='slant')
+
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
+
+console = Console()
+console.verbose = True
+
 
 def unique(
-        bam_fpn,
-        ed_thres,
-        work_dir,
-        verbose,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
         **kwargs
-):
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method Unique to deduplicate UMIs observed at a genomic loci.')
     mclumi = onepos(
         bam_fpn=bam_fpn,
         ed_thres=ed_thres,
@@ -30,12 +41,14 @@ def unique(
 
 
 def cluster(
-        bam_fpn,
-        ed_thres,
-        work_dir,
-        verbose,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
         **kwargs
-):
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method Cluster to deduplicate UMIs observed at a genomic loci.')
     mclumi = onepos(
         bam_fpn=bam_fpn,
         ed_thres=ed_thres,
@@ -47,12 +60,14 @@ def cluster(
 
 
 def adjacency(
-        bam_fpn,
-        ed_thres,
-        work_dir,
-        verbose,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
         **kwargs
-):
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method Adjacency to deduplicate UMIs observed at a genomic loci.')
     mclumi = onepos(
         bam_fpn=bam_fpn,
         ed_thres=ed_thres,
@@ -64,12 +79,14 @@ def adjacency(
 
 
 def directional(
-        bam_fpn,
-        ed_thres,
-        work_dir,
-        verbose,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
         **kwargs
-):
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method Directional to deduplicate UMIs observed at a genomic loci.')
     mclumi = onepos(
         bam_fpn=bam_fpn,
         ed_thres=ed_thres,
@@ -81,12 +98,14 @@ def directional(
 
 
 def mcl(
-        bam_fpn,
-        ed_thres,
-        work_dir,
-        verbose,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
         **kwargs
-):
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method MCL to deduplicate UMIs observed at a genomic loci.')
     mclumi = onepos(
         bam_fpn=bam_fpn,
         ed_thres=ed_thres,
@@ -98,34 +117,127 @@ def mcl(
 
 
 def mcl_val(
-
-):
-    onepos(
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
+        **kwargs
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method MCL-val to deduplicate UMIs observed at a genomic loci.')
+    mclumi = onepos(
         bam_fpn=bam_fpn,
-        mcl_fold_thres=1.5,
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-        ed_thres=1,
-        work_dir=to('data/'),
-
-        verbose=True,
-
+        ed_thres=ed_thres,
+        work_dir=work_dir,
+        verbose=verbose,
+        **kwargs,
     )
-    return umiche.mcl_val()
+    return mclumi.mcl_val()
 
 
 def mcl_ed(
-
-):
-    onepos(
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
+        **kwargs
+) -> pd.DataFrame:
+    print(vignette1.renderText('mclUMI'))
+    console.print('===>You are using method MCL-ed to deduplicate UMIs observed at a genomic loci.')
+    mclumi = onepos(
         bam_fpn=bam_fpn,
+        ed_thres=ed_thres,
+        work_dir=work_dir,
+        verbose=verbose,
+        **kwargs,
+    )
+    return mclumi.mcl_ed()
+
+
+if __name__ == "__main__":
+    from mclumi.path import to
+
+    # df_unique = unique(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_unique)
+    #
+    # df_cluster = cluster(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_cluster)
+    #
+    # df_adjacency = adjacency(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_adjacency)
+    #
+    # df_directional = directional(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_directional)
+
+    df_mcl = mcl(
+        bam_fpn=to('data/example_bundle.bam'),
+        ed_thres=1,
+        work_dir=to('data/'),
+        verbose=False,  # False True
+
+        heterogeneity=False,  # False True
+
+        inflat_val=1.6,
+        exp_val=2,
+        iter_num=100,
+    )
+    print(df_mcl)
+
+    df_mcl_val = mcl_val(
+        bam_fpn=to('data/example_bundle.bam'),
+        ed_thres=1,
+        work_dir=to('data/'),
+        verbose=False,  # False True
+
+        heterogeneity=False,  # False True
+
         mcl_fold_thres=1.5,
         inflat_val=1.6,
         exp_val=2,
         iter_num=100,
+    )
+    print(df_mcl_val)
+
+    df_mcl_ed = mcl_ed(
+        bam_fpn=to('data/example_bundle.bam'),
         ed_thres=1,
         work_dir=to('data/'),
-        verbose=True,
+        verbose=False,  # False True
+
+        heterogeneity=False,  # False True
+
+        mcl_fold_thres=1.5,
+        inflat_val=1.6,
+        exp_val=2,
+        iter_num=100,
     )
-    return umiche.mcl_ed()
+    print(df_mcl_ed)
+

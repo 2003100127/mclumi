@@ -17,7 +17,6 @@ from mclumi.deduplicate.method.Adjacency import Adjacency as umiadj
 from mclumi.deduplicate.method.Directional import Directional as umidirec
 from mclumi.deduplicate.method.MarkovClustering import MarkovClustering as umimcl
 from mclumi.deduplicate.method.Clustering import Clustering as umiclustering
-from mclumi.deduplicate.trimer.SetCoverOptimization import setCoverOptimization as umiscp
 
 from mclumi.util.Writer import Writer as fwriter
 from mclumi.util.Console import Console

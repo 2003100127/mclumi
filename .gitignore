@@ -1,7 +1,5 @@
 # ingore data folder
-mclumi/main.py
 mclumi/data/
-mclumi/plot/
 shell/
 
 # Byte-compiled / optimized / DLL files

@@ -1,14 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="mclumix",
-    # version="0.0.6",
-    version="0.0.0.0.27",
-    # name="tfg666",
-    # version="0.0.0.0.44",
-    keywords=("pip", "mclumi"),
-    description="UMI de-duplication",
-    long_description="UMI de-duplication based on MCL",
+    name="mclumi",
+    version="0.0.1",
+    keywords=("pip", "mclUMI"),
+    description="mclUMI",
+    long_description="UMI de-duplication using mclUMI",
     license="MIT",
 
     url="https://github.com/cribbslab; https://github.com/2003100127",

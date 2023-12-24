@@ -13,8 +13,8 @@ from sklearn.cluster import DBSCAN as skdbscan
 from sklearn.cluster import Birch as skbirch
 from sklearn.cluster import AffinityPropagation as skaprop
 
-from umiche.deduplicate.method.ReformKit import ReformKit as refkit
-from umiche.graph.Adjacency import Adjacency as netadj
+from mclumi.deduplicate.method.ReformKit import ReformKit as refkit
+from mclumi.graph.Adjacency import Adjacency as netadj
 
 
 class Clustering:
@@ -341,7 +341,7 @@ class Clustering:
 
 
 if __name__ == "__main__":
-    from umiche.deduplicate.method.Cluster import Cluster as umimonoclust
+    from mclumi.deduplicate.method.Cluster import Cluster as umimonoclust
 
     ### @@ data from UMI-tools
     # graph_adj = {

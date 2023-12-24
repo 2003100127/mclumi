@@ -1,10 +1,10 @@
 # import umi_tools.sam_methods as sam_methods
-import umiche.external.UMItoolsSamMethods as sam_methods
+import mclumi.external.UMItoolsSamMethods as sam_methods
 import pysam
-from umiche.util.Hamming import Hamming
+from mclumi.util.Hamming import Hamming
 import pandas as pd
 import numpy as np
-# from umiche.path import to
+# from mclumi.path import to
 
 
 def edave(x, d):

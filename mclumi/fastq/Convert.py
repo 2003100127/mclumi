@@ -9,9 +9,9 @@ __lab__ = "Cribbslab"
 import os
 import pysam
 # import bamnostic as bs
-from umiche.fastq.Read import read as fastqread
-from umiche.util.Folder import folder as crtfolder
-from umiche.util.Console import Console
+from mclumi.fastq.Read import read as fastqread
+from mclumi.util.Folder import folder as crtfolder
+from mclumi.util.Console import Console
 
 
 class Convert:
@@ -142,7 +142,7 @@ class Convert:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
     p = Convert(
         # fastq_fpn=to('data/simu/transloc/trimer/bulk/seq_errs/permute_0/seq_err_0.fastq.gz'),
         # bam_fpn=to('data/simu/transloc/trimer/'),

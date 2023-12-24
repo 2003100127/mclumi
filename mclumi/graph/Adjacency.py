@@ -7,7 +7,7 @@ __email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
 import numpy as np
-from umiche.util.Console import Console
+from mclumi.util.Console import Console
 
 
 class Adjacency:

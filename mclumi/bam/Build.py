@@ -9,9 +9,9 @@ __lab__ = "Cribbslab"
 import time
 import numpy as np
 import pandas as pd
-from umiche.graph.Edge import Edge as guuedge
-from umiche.util.Hamming import Hamming
-from umiche.util.Console import Console
+from mclumi.graph.Edge import Edge as guuedge
+from mclumi.util.Hamming import Hamming
+from mclumi.util.Console import Console
 
 
 class Build:
@@ -166,7 +166,7 @@ class Build:
         # ...,
         # 1948: [55, 151, 241, 609, 1025, 1032, 1060, 1191, 1230, 1307, 1489, 1490, 1713, 1851, 1922]}
 
-        # from umiche.deduplicate.method.Cluster import cluster as umimonoclust
+        # from mclumi.deduplicate.method.Cluster import cluster as umimonoclust
         # cc = umimonoclust().cc(self.graph_adj)
         # print(cc)
         # print(len(cc))

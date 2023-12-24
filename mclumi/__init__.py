@@ -13,7 +13,7 @@ from .fastq import *
 from .network import *
 from .trim import *
 from .util import *
-from .Main import *
+from .main import *
 from .path import *
 
 # ## /*** block. local ***/

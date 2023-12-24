@@ -9,8 +9,8 @@ __lab__ = "Cribbslab"
 import numpy as np
 import pandas as pd
 
-from umiche.util.Hamming import Hamming
-from umiche.util.Console import Console
+from mclumi.util.Hamming import Hamming
+from mclumi.util.Console import Console
 
 
 class Gadgetry:

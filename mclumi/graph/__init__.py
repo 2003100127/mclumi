@@ -3,8 +3,8 @@ from .CC import *
 from .Edge import *
 
 # try:
-#     from umiche.network.Adjacency import *
-#     from umiche.network.CC import *
-#     from umiche.network.Edge import *
+#     from mclumi.network.Adjacency import *
+#     from mclumi.network.CC import *
+#     from mclumi.network.Edge import *
 # except ImportError:
 #     pass

@@ -107,7 +107,7 @@ class ReformKit:
             umi,
     ):
         import numpy as np
-        from umiche.util.Single import Single as dnasgl
+        from mclumi.util.Single import Single as dnasgl
         nt_to_int_dict = dnasgl().todict(nucleotides=dnasgl().get(universal=True), reverse=False)
         # int_to_nt_dict = dnasgl().todict(nucleotides=dnasgl().get(universal=True), reverse=True)
         umi_ltr2digi = [nt_to_int_dict[i] for i in list(umi)]

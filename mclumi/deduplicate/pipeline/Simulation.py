@@ -7,15 +7,15 @@ __email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
 import pandas as pd
-from umiche.fastq.Convert import Convert as fastqconverter
-from umiche.trim.Template import Template as trimmer
-from umiche.graph.bfs.ConnectedComponent import ConnectedComponent as gbfscc
-from umiche.simu.Parameter import Parameter as params
+from mclumi.fastq.Convert import Convert as fastqconverter
+from mclumi.trim.Template import Template as trimmer
+from mclumi.graph.bfs.ConnectedComponent import ConnectedComponent as gbfscc
+from mclumi.simu.Parameter import Parameter as params
 
-from umiche.deduplicate.MultiPos import MultiPos as deduppos
-from umiche.plot.Heterogeneity import Heterogeneity as plotv
-from umiche.util.Writer import Writer as fwriter
-from umiche.util.Console import Console
+from mclumi.deduplicate.MultiPos import MultiPos as deduppos
+from mclumi.plot.Heterogeneity import Heterogeneity as plotv
+from mclumi.util.Writer import Writer as fwriter
+from mclumi.util.Console import Console
 
 
 class Simulation:
@@ -98,7 +98,7 @@ class Simulation:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
 
     p = Simulation(
         # scenario='pcr_nums',

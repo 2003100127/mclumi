@@ -9,18 +9,17 @@ __lab__ = "Cribbslab"
 import time
 import pandas as pd
 
-from umiche.bam.Reader import Reader as alireader
+from mclumi.bam.Reader import Reader as alireader
 
-from umiche.bam.Build import Build as umibuild
-from umiche.deduplicate.Gadgetry import Gadgetry as umigadgetry
-from umiche.deduplicate.Tabulate import Tabulate as umitab
+from mclumi.bam.Build import Build as umibuild
+from mclumi.deduplicate.Gadgetry import Gadgetry as umigadgetry
+from mclumi.deduplicate.Tabulate import Tabulate as umitab
 
 # dedup methods
-from umiche.deduplicate.method.Cluster import Cluster as umiclust
+from mclumi.deduplicate.method.Cluster import Cluster as umiclust
 
-from umiche.util.Number import number as rannum
-from umiche.util.Writer import writer as gwriter
-from umiche.util.Console import Console
+from mclumi.util.Number import number as rannum
+from mclumi.util.Console import Console
 
 
 class MultiPos:
@@ -78,7 +77,6 @@ class MultiPos:
         self.umibuild = umibuild
         self.umigadgetry = umigadgetry()
         self.rannum = rannum()
-        self.gwriter = gwriter()
         self.console = Console()
         self.console.verbose = self.verbose
 
@@ -244,7 +242,7 @@ class MultiPos:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
 
     umiche = MultiPos(
         # bam_fpn=to('data/example.bam'),

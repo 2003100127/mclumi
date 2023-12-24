@@ -8,7 +8,7 @@ __lab__ = "Cribbslab"
 
 import time
 import pandas as pd
-from umiche.util.Console import Console
+from mclumi.util.Console import Console
 
 
 class Relation:

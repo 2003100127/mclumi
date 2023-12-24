@@ -8,7 +8,7 @@ __lab__ = "Cribbslab"
 
 import os
 import gzip
-from umiche.util.Folder import folder as crtfolder
+from mclumi.util.Folder import folder as crtfolder
 
 
 class write:

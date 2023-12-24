@@ -9,7 +9,7 @@ __lab__ = "Cribbslab"
 import time
 import pysam
 import pandas as pd
-from umiche.util.Console import Console
+from mclumi.util.Console import Console
 # import bamnostic as bs
 
 
@@ -208,7 +208,7 @@ class Reader:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
 
     umiche = Reader(
         # bam_fpn=to('data/example.bam'),

@@ -10,18 +10,17 @@ import time
 import sys
 import pandas as pd
 
-from umiche.bam.Reader import Reader as alireader
+from mclumi.bam.Reader import Reader as alireader
 
-from umiche.bam.Build import Build as umibuild
-from umiche.deduplicate.Gadgetry import Gadgetry as umigadgetry
-from umiche.deduplicate.Tabulate import Tabulate as umitab
+from mclumi.bam.Build import Build as umibuild
+from mclumi.deduplicate.Gadgetry import Gadgetry as umigadgetry
+from mclumi.deduplicate.Tabulate import Tabulate as umitab
 
 # dedup methods
-from umiche.deduplicate.method.Cluster import Cluster as umiclust
+from mclumi.deduplicate.method.Cluster import Cluster as umiclust
 
-from umiche.util.Number import number as rannum
-from umiche.util.Writer import writer as gwriter
-from umiche.util.Console import Console
+from mclumi.util.Number import number as rannum
+from mclumi.util.Console import Console
 sys.setrecursionlimit(15000000)
 
 
@@ -82,7 +81,6 @@ class SingleCell:
         self.umibuild = umibuild
         self.umigadgetry = umigadgetry()
         self.rannum = rannum()
-        self.gwriter = gwriter()
         self.console = Console()
         self.console.verbose = self.verbose
 
@@ -252,7 +250,7 @@ class SingleCell:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
 
     umiche = SingleCell(
         bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),

@@ -11,10 +11,10 @@ from typing import Dict
 # import numpy as np
 import pandas as pd
 import markov_clustering as mc
-from umiche.graph.CC import cc as gbfscc
-from umiche.deduplicate.method.ReformKit import ReformKit as refkit
-from umiche.util.Hamming import Hamming
-from umiche.graph.Adjacency import Adjacency as netadj
+from mclumi.graph.CC import cc as gbfscc
+from mclumi.deduplicate.method.ReformKit import ReformKit as refkit
+from mclumi.util.Hamming import Hamming
+from mclumi.graph.Adjacency import Adjacency as netadj
 
 
 class MarkovClustering:
@@ -526,7 +526,7 @@ class MarkovClustering:
 
 
 if __name__ == "__main__":
-    from umiche.deduplicate.method.Cluster import Cluster as umimonoclust
+    from mclumi.deduplicate.method.Cluster import Cluster as umimonoclust
 
     p = MarkovClustering(
         inflat_val=1.6,

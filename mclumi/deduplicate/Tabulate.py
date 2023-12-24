@@ -10,19 +10,18 @@ import time
 
 import pandas as pd
 
-from umiche.bam.Writer import Writer as aliwriter
+from mclumi.bam.Writer import Writer as aliwriter
 
-from umiche.deduplicate.Gadgetry import Gadgetry as umigadgetry
+from mclumi.deduplicate.Gadgetry import Gadgetry as umigadgetry
 
 # dedup methods
-from umiche.deduplicate.method.Adjacency import Adjacency as umiadj
-from umiche.deduplicate.method.Directional import Directional as umidirec
-from umiche.deduplicate.method.MarkovClustering import MarkovClustering as umimcl
-from umiche.deduplicate.method.Clustering import Clustering as umiclustering
-from umiche.deduplicate.trimer.SetCoverOptimization import setCoverOptimization as umiscp
+from mclumi.deduplicate.method.Adjacency import Adjacency as umiadj
+from mclumi.deduplicate.method.Directional import Directional as umidirec
+from mclumi.deduplicate.method.MarkovClustering import MarkovClustering as umimcl
+from mclumi.deduplicate.method.Clustering import Clustering as umiclustering
 
-from umiche.util.Writer import Writer as gwriter
-from umiche.util.Console import Console
+from mclumi.util.Writer import Writer as fwriter
+from mclumi.util.Console import Console
 
 
 class Tabulate:
@@ -48,24 +47,11 @@ class Tabulate:
 
         self.umiadj = umiadj()
         self.umidirec = umidirec(self.heterogeneity)
-        self.umiscp = umiscp()
 
-        self.gwriter = gwriter()
+        self.fwriter = fwriter()
 
         self.console = Console()
         self.console.verbose = verbose
-
-    def set_cover(self, ):
-        dedup_umi_stime = time.time()
-        self.dedup_num = self.umiscp.count(
-            inbam=self.bam_fpn,
-            tag=self.pos_tag,
-            sep='_',
-        )
-        print(self.dedup_num)
-        # print(self.df_bam.columns)
-        # print(self.df_bam)
-        return
 
     def unique(self, ):
         dedup_umi_stime = time.time()
@@ -89,12 +75,12 @@ class Tabulate:
         self.console.print('======># of deduplicated unique umis {}'.format(self.df['num_diff_dedup_uniq_umis'].sum()))
         self.console.print('======># of deduplicated reads {}'.format(self.df['num_diff_dedup_reads'].sum()))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'unique_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'ave_ed',
                     'num_uniq_umis',
@@ -141,12 +127,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'cluster_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -206,12 +192,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'adjacency_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -285,12 +271,12 @@ class Tabulate:
         # print(self.ave_ed_bins)
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'directional_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -367,12 +353,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -449,12 +435,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -530,12 +516,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_val_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -619,12 +605,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ed_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',
@@ -689,12 +675,12 @@ class Tabulate:
         self.ave_ed_bins = self.df['ave_eds'].value_counts().sort_index().to_frame().reset_index()
         self.console.check("======>bins for average edit distance\n{}".format(self.ave_ed_bins))
         if not self.heterogeneity:
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + clustering_method + '_ave_ed_bin.txt',
                 index=True,
             )
-            self.gwriter.generic(
+            self.fwriter.generic(
                 df=self.df[[
                     'dedup_cnt',
                     'ave_ed',

@@ -10,7 +10,7 @@ import pandas as pd
 from functools import wraps
 
 
-class reader:
+class Reader:
 
 
 

@@ -9,11 +9,11 @@ from .Console import *
 
 # ## /*** block. local ***/
 # try:
-#     from umiche.util.Reader import *
-#     from umiche.util.Hamming import *
-#     from umiche.util.Number import *
-#     from umiche.util.Single import *
-#     from umiche.util.Writer import *
-#     from umiche.util.Folder import *
+#     from mclumi.util.Reader import *
+#     from mclumi.util.Hamming import *
+#     from mclumi.util.Number import *
+#     from mclumi.util.Single import *
+#     from mclumi.util.Writer import *
+#     from mclumi.util.Folder import *
 # except ImportError:
 #     pass

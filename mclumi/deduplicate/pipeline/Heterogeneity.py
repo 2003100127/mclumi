@@ -8,18 +8,17 @@ __lab__ = "Cribbslab"
 
 import json
 import pandas as pd
-from umiche.simu.Parameter import Parameter as params
-from umiche.trim.Template import Template as trimmer
-from umiche.fastq.Convert import Convert as fastqconverter
+from mclumi.simu.Parameter import Parameter as params
+from mclumi.trim.Template import Template as trimmer
+from mclumi.fastq.Convert import Convert as fastqconverter
 
-from umiche.deduplicate.OnePos import OnePos as dedupop
-from umiche.plot.Heterogeneity import Heterogeneity as plothetero
+from mclumi.deduplicate.OnePos import OnePos as dedupop
 
-from umiche.deduplicate.heterogeneity.Trace import Trace as umitrace
-from umiche.bam.Relation import Relation as umirel
+from mclumi.deduplicate.heterogeneity.Trace import Trace as umitrace
+from mclumi.bam.Relation import Relation as umirel
 
-from umiche.util.Writer import Writer as fwriter
-from umiche.util.Console import Console
+from mclumi.util.Writer import Writer as fwriter
+from mclumi.util.Console import Console
 
 
 class Heterogeneity:
@@ -42,7 +41,6 @@ class Heterogeneity:
 
         self.params = params(param_fpn=param_fpn)
         self.fwriter = fwriter()
-        self.plothetero = plothetero()
 
         self.console = Console()
         self.console.verbose = self.verbose
@@ -148,10 +146,6 @@ class Heterogeneity:
 
                     # print(self.df_apv_pct)
 
-                    # self.plothetero.n1(
-                    #     df_apv=self.df_apv_pct,
-                    #     df_disapv=self.df_disapv_pct,
-                    # )
             self.df_dedup['pn' + str(perm_num_i)] = dedup_arr
             # print(df_dedup)
 
@@ -198,7 +192,7 @@ class Heterogeneity:
 
 
 if __name__ == "__main__":
-    from umiche.path import to
+    from mclumi.path import to
 
     p = Heterogeneity(
         scenario='pcr_nums',
@@ -219,7 +213,6 @@ if __name__ == "__main__":
         # method='birch_seq_onehot',
         # method='hdbscan_seq_onehot',
         # method='aprop_seq_onehot',
-        # method='set_cover',
 
         # is_trim=True,
         # is_tobam=False,

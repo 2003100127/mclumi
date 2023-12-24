@@ -20,17 +20,17 @@ setup(
     platforms="any",
     python_requires='>3.6',
     install_requires=[
-        'pandas==1.3.3',
-        'numpy==1.22.0',
-        'pysam==0.17.0',
-        'pyfastx==0.8.4',
+        'pandas', # 1.3.3
+        'numpy', # 1.22.0
+        'pysam', # 0.17.0
+        'pyfastx',
         'markov_clustering==0.0.6.dev0',
         'networkx==2.6.3',
         'pyfiglet==0.8.post1',
     ],
     entry_points={
         'console_scripts': [
-            'mclumi=mclumi.Main:main',
+            'mclumi=mclumi.main:main',
         ],
     }
 )

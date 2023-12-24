@@ -19,7 +19,6 @@ from mclumi.deduplicate.Tabulate import Tabulate as umitab
 # dedup methods
 from mclumi.deduplicate.method.Cluster import Cluster as umiclust
 
-from mclumi.util.Number import number as rannum
 from mclumi.util.Console import Console
 sys.setrecursionlimit(15000000)
 
@@ -32,13 +31,12 @@ class SingleCell:
             ed_thres,
             gene_assigned_tag,
             gene_is_assigned_tag,
-            mcl_fold_thres=None,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
             umi_='_',
             work_dir='./',
+            heterogeneity=False,
             verbose=False,
+
+            **kwargs,
     ):
         """
 
@@ -69,25 +67,27 @@ class SingleCell:
         self.ed_thres = ed_thres
         self.gene_assigned_tag = gene_assigned_tag
         self.gene_is_assigned_tag = gene_is_assigned_tag
-        self.mcl_fold_thres = mcl_fold_thres
-        self.inflat_val = inflat_val
-        self.exp_val = exp_val
-        self.iter_num = iter_num
         self.work_dir = work_dir
+        self.heterogeneity = heterogeneity
         self.verbose = verbose
+        self.kwargs = kwargs
 
         self.umiclust = umiclust()
 
         self.umibuild = umibuild
         self.umigadgetry = umigadgetry()
-        self.rannum = rannum()
         self.console = Console()
         self.console.verbose = self.verbose
 
         # sys.stdout = open(self.work_dir + self.method + '_log.txt', 'w')
 
         self.alireader = alireader(bam_fpn=self.bam_fpn, verbose=self.verbose)
-        self.df_bam = self.alireader.todf(tags=[self.gene_assigned_tag, self.gene_is_assigned_tag, 'BC'])
+        self.df_bam = self.alireader.todf(tags=[
+            self.gene_assigned_tag,
+            self.gene_is_assigned_tag,
+            # 'BC',
+        ])
+        # print(self.df_bam['BC'])
         ### @@ self.df_bam
         #           id  ... query_qualities
         # 0          0  ...            None
@@ -100,14 +100,28 @@ class SingleCell:
         self.console.print('======># of reads with qualified chrs: {}'.format(self.df_bam.shape[0]))
         self.df_bam = self.df_bam.loc[self.df_bam[self.gene_is_assigned_tag] == 'Assigned']
 
-        self.df_bam['bc'] = self.df_bam['BC']
-        self.df_bam['umi'] = self.df_bam['query_name'].apply(lambda x: x.split(umi_)[1])
-        # self.df_bam['umi'] = self.df_bam['query_name'].apply(lambda x: x.split(umi_)[-1])
+        self.df_bam['bc'] = self.df_bam['query_name'].apply(lambda x: x.split(umi_)[-2])
+        ### @@ self.df_bam['bc']
+        # 0          GGTGCGTAGGCTACGA
+        # 1          TGACTAGGTGTGGTTT
+        # 2          CAGATCATCGTCGTTC
+        #                  ...
+        # 3552650    ATCACGAGTAATTGGA
+        # 3552651    ACTATCTCAAGGTGTG
+        # Name: bc, Length: 588963, dtype: object
+        self.df_bam['umi'] = self.df_bam['query_name'].apply(lambda x: x.split(umi_)[-1])
+        ### @@ self.df_bam['umi']
+        # 0          CCGGAGAGGG
+        # 1          CGCCCCCGGG
+        # 2          CCCGAGAATT
+        #               ...
+        # 3552650    CAACACAAGT
+        # 3552651    TGATTGAAGC
+        # Name: umi, Length: 588963, dtype: object
         self.console.print('======># of unique barcodes: {}'.format(self.df_bam['bc'].unique().shape[0]))
         self.console.print('======># of unique umis: {}'.format(self.df_bam['umi'].unique().shape[0]))
         self.console.print('======># of redundant umis: {}'.format(self.df_bam['umi'].shape[0]))
         self.console.print('======>edit distance thres: {}'.format(self.ed_thres))
-
         ### @@ self.df_bam
         #           id                     query_name  ...        umi  source
         # 0          0   SRR2057595.2985267_ACCGGTTTA  ...  ACCGGTTTA       1
@@ -177,6 +191,7 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).unique()
 
@@ -186,8 +201,10 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).cluster()
+
 
     def adjacency(self, ) -> pd.DataFrame:
         return umitab(
@@ -195,6 +212,7 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).adjacency()
 
@@ -204,6 +222,7 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).directional()
 
@@ -213,11 +232,22 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
+            **self.kwargs
+        )
+
+    def mcl_cc_all_node_umis(self, ) -> pd.DataFrame:
+        return umitab(
+            df=self.df,
+            df_bam=self.df_bam,
+            bam_fpn=self.bam_fpn,
+            work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
+            verbose=False,
+        ).mcl_cc_all_node_umis(
+            **self.kwargs
         )
 
     def mcl_val(self, ) -> pd.DataFrame:
@@ -226,12 +256,10 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl_val(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
-            mcl_fold_thres=self.mcl_fold_thres,
+            **self.kwargs
         )
 
     def mcl_ed(self, ) -> pd.DataFrame:
@@ -240,12 +268,10 @@ class SingleCell:
             df_bam=self.df_bam,
             bam_fpn=self.bam_fpn,
             work_dir=self.work_dir,
+            heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl_ed(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
-            mcl_fold_thres=self.mcl_fold_thres,
+            **self.kwargs
         )
 
 
@@ -260,9 +286,11 @@ if __name__ == "__main__":
         inflat_val=1.6,
         exp_val=2,
         iter_num=100,
-        verbose=True,
         ed_thres=6,
         work_dir=to('data/'),
+
+        verbose=False,  # False True
+        heterogeneity=False,  # False True
     )
 
     print(umiche.unique())

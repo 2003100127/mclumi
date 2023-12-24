@@ -8,8 +8,6 @@ __lab__ = "Cribbslab"
 
 import time
 
-import pandas as pd
-
 from mclumi.bam.Writer import Writer as aliwriter
 
 from mclumi.deduplicate.Gadgetry import Gadgetry as umigadgetry
@@ -19,6 +17,7 @@ from mclumi.deduplicate.method.Adjacency import Adjacency as umiadj
 from mclumi.deduplicate.method.Directional import Directional as umidirec
 from mclumi.deduplicate.method.MarkovClustering import MarkovClustering as umimcl
 from mclumi.deduplicate.method.Clustering import Clustering as umiclustering
+from mclumi.deduplicate.trimer.SetCoverOptimization import setCoverOptimization as umiscp
 
 from mclumi.util.Writer import Writer as fwriter
 from mclumi.util.Console import Console
@@ -45,13 +44,24 @@ class Tabulate:
 
         self.umigadgetry = umigadgetry()
 
-        self.umiadj = umiadj()
-        self.umidirec = umidirec(self.heterogeneity)
-
         self.fwriter = fwriter()
 
         self.console = Console()
         self.console.verbose = verbose
+
+    def set_cover(self, ):
+        self.umiscp = umiscp()
+
+        dedup_umi_stime = time.time()
+        self.dedup_num = self.umiscp.count(
+            inbam=self.bam_fpn,
+            tag=self.pos_tag,
+            sep='_',
+        )
+        print(self.dedup_num)
+        # print(self.df_bam.columns)
+        # print(self.df_bam)
+        return
 
     def unique(self, ):
         dedup_umi_stime = time.time()
@@ -79,6 +89,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'unique_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -131,6 +142,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'cluster_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -157,9 +169,10 @@ class Tabulate:
 
     def adjacency(self, ):
         dedup_umi_stime = time.time()
+        umiadj_ob = umiadj()
         self.df['adj'] = self.df.apply(
-            lambda x: self.umiadj.decompose(
-                cc_sub_dict=self.umiadj.umi_tools(
+            lambda x: umiadj_ob.decompose(
+                cc_sub_dict=umiadj_ob.umi_tools(
                     connected_components=x['cc'],
                     df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
                     graph_adj=x['vignette']['graph_adj'],
@@ -196,6 +209,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'adjacency_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -222,8 +236,9 @@ class Tabulate:
 
     def directional(self, ):
         dedup_umi_stime = time.time()
+        umidirec_ob = umidirec(self.heterogeneity)
         # self.df[['count', 'clusters', 'apv', 'disapv']] = self.df.apply(
-        #     lambda x: self.umidirec.umi_tools(
+        #     lambda x: umidirec_ob.umi_tools(
         #         connected_components=x['cc'],
         #         df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
         #         graph_adj=x['vignette']['graph_adj'],
@@ -231,26 +246,34 @@ class Tabulate:
         #     axis=1,
         #     result_type='expand',
         # )
-        self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
-            *self.df.apply(
-                lambda x: self.umidirec.umi_tools(
-                    connected_components=x['cc'],
-                    df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
-                    graph_adj=x['vignette']['graph_adj'],
+        if self.heterogeneity:
+            self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
+                *self.df.apply(
+                    lambda x: umidirec_ob.umi_tools(
+                        connected_components=x['cc'],
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        graph_adj=x['vignette']['graph_adj'],
+                    ),
+                    axis=1,
+                )
+            )
+            self.df['direc'] = self.df.apply(
+                lambda x: umidirec_ob.decompose(
+                    cc_sub_dict=x['clusters'],
                 ),
                 axis=1,
             )
-        )
-        # print(self.df.columns)
-        # print(self.df['count'])
-        # print(self.df['clusters'])
-        # print(self.df['apv'])
-        self.df['direc'] = self.df.apply(
-            lambda x: self.umidirec.decompose(
-                cc_sub_dict=x['clusters'],
-            ),
-            axis=1,
-        )
+        else:
+            self.df['direc'] = self.df.apply(
+                lambda x: umidirec_ob.decompose(
+                    cc_sub_dict=umidirec_ob.umi_tools(
+                        connected_components=x['cc'],
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        graph_adj=x['vignette']['graph_adj'],
+                    )['clusters'],
+                ),
+                axis=1,
+            )
         # print(self.df['direc'])
         self.df['direc_repr_nodes'] = self.df.apply(lambda x: self.umigadgetry.umimax(x, by_col='direc'), axis=1)
         # print(self.df['direc_repr_nodes'])
@@ -275,6 +298,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'directional_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -301,42 +325,43 @@ class Tabulate:
 
     def mcl(
             self,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
-
+            **kwargs
     ):
         dedup_umi_stime = time.time()
-        self.umimcl = umimcl(
-            inflat_val=inflat_val,
-            exp_val=exp_val,
-            iter_num=iter_num,
+        umimcl_ob = umimcl(
+            inflat_val=kwargs['inflat_val'],
+            exp_val=kwargs['exp_val'],
+            iter_num=kwargs['iter_num'],
+            heterogeneity=self.heterogeneity,
         )
         # print(self.df)
         ### @@ please note that df and df_mcl_res cannot be merged becuase the dimension is not the same.
-        df_mcl_res = self.df.apply(
-            lambda x: self.umimcl.dfclusters(
-                connected_components=x['cc'],
-                graph_adj=x['vignette']['graph_adj'],
-            ),
-            axis=1,
-        ).values[0]
-        mcl_dict = {'mcl': self.umimcl.decompose(
-            list_nd=df_mcl_res['clusters'].values
-        )}
-        apv_dict = {'apv': [df_mcl_res['apv']]}
-        self.df['mcl'] = self.df.apply(lambda x: mcl_dict['mcl'], axis=1)
-        self.df['apv'] = self.df.apply(lambda x: apv_dict['apv'], axis=1)
-        # print(self.df['apv'])
-        # self.df['mcl'] = self.df.apply(
-        #     lambda x: self.umimcl.decompose(
-        #         list_nd=self.umimcl.dfclusters(
-        #             connected_components=x['cc'],
-        #             graph_adj=x['vignette']['graph_adj'],
-        #         )['clusters'].values,
-        #     ),
-        #     axis=1,
-        # )
+        if self.heterogeneity:
+            df_mcl_res = self.df.apply(
+                lambda x: umimcl_ob.dfclusters(
+                    connected_components=x['cc'],
+                    graph_adj=x['vignette']['graph_adj'],
+                ),
+                axis=1,
+            ).values[0]
+            mcl_dict = {'mcl': umimcl_ob.decompose(
+                list_nd=df_mcl_res['clusters'].values
+            )}
+            self.df['mcl'] = self.df.apply(lambda x: mcl_dict['mcl'], axis=1)
+            apv_dict = {'apv': [df_mcl_res['apv']]}
+            self.df['apv'] = self.df.apply(lambda x: apv_dict['apv'], axis=1)
+            print(self.df['mcl'])
+        else:
+            self.df['mcl'] = self.df.apply(
+                lambda x: umimcl_ob.decompose(
+                    list_nd=umimcl_ob.dfclusters(
+                        connected_components=x['cc'],
+                        graph_adj=x['vignette']['graph_adj'],
+                    )['clusters'].values,
+                ),
+                axis=1,
+            )
+            print(self.df['mcl'])
         ### @@ self.df['mcl']
         # 1    {0: [0, 76, 162, 188, 237, 256], 1: [65, 55, 1...
         # Name: mcl, dtype: object
@@ -357,6 +382,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -383,27 +409,25 @@ class Tabulate:
 
     def mcl_cc_all_node_umis(
             self,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
-
+            **kwargs,
     ):
         dedup_umi_stime = time.time()
-        self.umimcl = umimcl(
-            inflat_val=inflat_val,
-            exp_val=exp_val,
-            iter_num=iter_num,
+        umimcl_ob = umimcl(
+            inflat_val=kwargs['inflat_val'],
+            exp_val=kwargs['exp_val'],
+            iter_num=kwargs['iter_num'],
+            heterogeneity=self.heterogeneity,
         )
         # print(self.df)
         ### @@ please note that df and df_mcl_res cannot be merged becuase the dimension is not the same.
         df_mcl_res = self.df.apply(
-            lambda x: self.umimcl.dfclusters_cc_all_node_umis(
+            lambda x: umimcl_ob.dfclusters_cc_all_node_umis(
                 int_to_umi_dict=x['vignette']['int_to_umi_dict'],
                 graph_adj=x['vignette']['graph_adj'],
             ),
             axis=1,
         ).values[0]
-        mcl_dict = {'mcl': self.umimcl.decompose(
+        mcl_dict = {'mcl': umimcl_ob.decompose(
             list_nd=df_mcl_res['clusters'].values
         )}
         apv_dict = {'apv': [df_mcl_res['apv']]}
@@ -411,8 +435,8 @@ class Tabulate:
         self.df['apv'] = self.df.apply(lambda x: apv_dict['apv'], axis=1)
         # print(self.df['apv'])
         # self.df['mcl'] = self.df.apply(
-        #     lambda x: self.umimcl.decompose(
-        #         list_nd=self.umimcl.dfclusters(
+        #     lambda x: umimcl_ob.decompose(
+        #         list_nd=umimcl_ob.dfclusters(
         #             connected_components=x['cc'],
         #             graph_adj=x['vignette']['graph_adj'],
         #         )['clusters'].values,
@@ -439,6 +463,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -465,42 +490,51 @@ class Tabulate:
 
     def mcl_val(
             self,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
-            mcl_fold_thres=2,
+            **kwargs,
     ):
         dedup_umi_stime = time.time()
-        self.umimcl = umimcl(
-            inflat_val=inflat_val,
-            exp_val=exp_val,
-            iter_num=iter_num,
+        umimcl_ob = umimcl(
+            inflat_val=kwargs['inflat_val'],
+            exp_val=kwargs['exp_val'],
+            iter_num=kwargs['iter_num'],
             heterogeneity=self.heterogeneity,
         )
-        self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
-            *self.df.apply(
-                lambda x: self.umimcl.maxval_val(
-                    df_mcl_ccs=self.umimcl.dfclusters(
-                        connected_components=x['cc'],
-                        graph_adj=x['vignette']['graph_adj'],
+        if self.heterogeneity:
+            self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
+                *self.df.apply(
+                    lambda x: umimcl_ob.maxval_val(
+                        df_mcl_ccs=umimcl_ob.dfclusters(
+                            connected_components=x['cc'],
+                            graph_adj=x['vignette']['graph_adj'],
+                        ),
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        thres_fold=kwargs['mcl_fold_thres'],
                     ),
-                    df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
-                    thres_fold=mcl_fold_thres,
+                    axis=1,
+                )
+            )
+            self.df['mcl_val'] = self.df.apply(
+                lambda x: umimcl_ob.decompose(
+                    list_nd=x['clusters'].values,
                 ),
                 axis=1,
             )
-        )
-        # print(self.df.columns)
-        # print(self.df['count'])
-        # print(self.df['clusters'])
-        # print('asdasd',self.df['clusters'].values[0].values)
-        self.df['mcl_val'] = self.df.apply(
-            lambda x: self.umimcl.decompose(
-                list_nd=x['clusters'].values,
-            ),
-            axis=1,
-        )
-        # print('asdasd',self.df['mcl_val'])
+            print(self.df['mcl_val'])
+        else:
+            self.df['mcl_val'] = self.df.apply(
+                lambda x: umimcl_ob.decompose(
+                    list_nd=umimcl_ob.maxval_val(
+                        df_mcl_ccs=umimcl_ob.dfclusters(
+                            connected_components=x['cc'],
+                            graph_adj=x['vignette']['graph_adj'],
+                        ),
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        thres_fold=kwargs['mcl_fold_thres'],
+                    )['clusters'].values,
+                ),
+                axis=1,
+            )
+            print(self.df['mcl_val'])
         self.df['mcl_val_repr_nodes'] = self.df.apply(lambda x: self.umigadgetry.umimax(x, by_col='mcl_val'), axis=1)
         self.df['dedup_cnt'] = self.df['mcl_val_repr_nodes'].apply(lambda x: self.umigadgetry.length(x))
         self.console.print('======>finish finding deduplicated umis in {:.2f}s'.format(time.time() - dedup_umi_stime))
@@ -520,6 +554,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_val_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -547,47 +582,54 @@ class Tabulate:
 
     def mcl_ed(
             self,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
-            mcl_fold_thres=2,
+            **kwargs,
     ):
         dedup_umi_stime = time.time()
-        self.umimcl = umimcl(
-            inflat_val=inflat_val,
-            exp_val=exp_val,
-            iter_num=iter_num,
+        umimcl_ob = umimcl(
+            inflat_val=kwargs['inflat_val'],
+            exp_val=kwargs['exp_val'],
+            iter_num=kwargs['iter_num'],
             heterogeneity=self.heterogeneity,
         )
-        # self.df[['count', 'clusters', 'apv', 'disapv']]
-        self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
-            *self.df.apply(
-                lambda x: self.umimcl.maxval_ed(
-                    df_mcl_ccs=self.umimcl.dfclusters(
-                        connected_components=x['cc'],
-                        graph_adj=x['vignette']['graph_adj'],
+        if self.heterogeneity:
+            # self.df[['count', 'clusters', 'apv', 'disapv']]
+            self.df['count'], self.df['clusters'], self.df['apv'], self.df['disapv'] = zip(
+                *self.df.apply(
+                    lambda x: umimcl_ob.maxval_ed(
+                        df_mcl_ccs=umimcl_ob.dfclusters(
+                            connected_components=x['cc'],
+                            graph_adj=x['vignette']['graph_adj'],
+                        ),
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        int_to_umi_dict=x['vignette']['int_to_umi_dict'],
+                        thres_fold=kwargs['mcl_fold_thres'],
                     ),
-                    df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
-                    int_to_umi_dict=x['vignette']['int_to_umi_dict'],
-                    thres_fold=mcl_fold_thres,
+                    axis=1,
+                )
+            )
+            self.df['mcl_ed'] = self.df.apply(
+                lambda x: umimcl_ob.decompose(
+                    list_nd=x['clusters'].values,
+                    # list_nd=x['clusters'].values[0].tolist(),
                 ),
                 axis=1,
             )
-        )
-        # print(self.df.columns)
-        # print(self.df['count'])
-        # print(self.df['clusters'].values[0])
-        # print(self.df['clusters'].values[0].tolist())
-        # print(self.df['apv'].values[0])
-        # print(self.df['disapv'].values[0])
-        self.df['mcl_ed'] = self.df.apply(
-            lambda x: self.umimcl.decompose(
-                list_nd=x['clusters'].values,
-                # list_nd=x['clusters'].values[0].tolist(),
-            ),
-            axis=1,
-        )
-        # print(self.df['mcl_ed'])
+            # print(self.df['mcl_ed'])
+        else:
+            self.df['mcl_ed'] = self.df.apply(
+                lambda x: umimcl_ob.decompose(
+                    list_nd=umimcl_ob.maxval_ed(
+                        df_mcl_ccs=umimcl_ob.dfclusters(
+                            connected_components=x['cc'],
+                            graph_adj=x['vignette']['graph_adj'],
+                        ),
+                        df_umi_uniq_val_cnt=x['vignette']['df_umi_uniq_val_cnt'],
+                        int_to_umi_dict=x['vignette']['int_to_umi_dict'],
+                        thres_fold=kwargs['mcl_fold_thres'],
+                    )['clusters'].values,
+                ),
+                axis=1,
+            )
         self.df['mcl_ed_repr_nodes'] = self.df.apply(lambda x: self.umigadgetry.umimax(x, by_col='mcl_ed'), axis=1)
         self.df['dedup_cnt'] = self.df['mcl_ed_repr_nodes'].apply(lambda x: self.umigadgetry.length(x))
         # print(self.df['dedup_cnt'])
@@ -609,6 +651,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + 'mcl_ed_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[
@@ -679,6 +722,7 @@ class Tabulate:
                 df=self.ave_ed_bins,
                 sv_fpn=self.work_dir + clustering_method + '_ave_ed_bin.txt',
                 index=True,
+                header=True,
             )
             self.fwriter.generic(
                 df=self.df[[

@@ -1,6 +1,6 @@
 # ingore data folder
 mclumi/main.py
-mclumi/example/
+mclumi/data/
 mclumi/plot/
 shell/
 

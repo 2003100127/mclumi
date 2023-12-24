@@ -18,8 +18,6 @@ from mclumi.deduplicate.Tabulate import Tabulate as umitab
 # dedup methods
 from mclumi.deduplicate.method.Cluster import Cluster as umiclust
 
-from mclumi.util.Number import number as rannum
-from mclumi.util.Writer import Writer as gwriter
 from mclumi.util.Console import Console
 
 
@@ -29,10 +27,6 @@ class OnePos:
             self,
             bam_fpn,
             ed_thres,
-            mcl_fold_thres=None,
-            inflat_val=2.0,
-            exp_val=2,
-            iter_num=100,
             umi_='_',
             work_dir='./',
 
@@ -68,10 +62,6 @@ class OnePos:
         """
         self.bam_fpn = bam_fpn
         self.ed_thres = ed_thres
-        self.mcl_fold_thres = mcl_fold_thres
-        self.inflat_val = inflat_val
-        self.exp_val = exp_val
-        self.iter_num = iter_num
         self.work_dir = work_dir
         self.heterogeneity = heterogeneity
         self.verbose = verbose
@@ -82,8 +72,6 @@ class OnePos:
 
         self.umibuild = umibuild
         self.umigadgetry = umigadgetry()
-        self.rannum = rannum()
-        self.gwriter = gwriter()
         self.console = Console()
         self.console.verbose = self.verbose
 
@@ -191,7 +179,6 @@ class OnePos:
             verbose=False,
         ).cluster()
 
-
     def adjacency(self, ) -> pd.DataFrame:
         return umitab(
             df=self.df,
@@ -221,10 +208,9 @@ class OnePos:
             heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
+            **self.kwargs
         )
+
     def mcl_cc_all_node_umis(self, ) -> pd.DataFrame:
         return umitab(
             df=self.df,
@@ -234,9 +220,7 @@ class OnePos:
             heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl_cc_all_node_umis(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
+            **self.kwargs
         )
 
     def mcl_val(self, ) -> pd.DataFrame:
@@ -248,10 +232,7 @@ class OnePos:
             heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl_val(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
-            mcl_fold_thres=self.mcl_fold_thres,
+            **self.kwargs
         )
 
     def mcl_ed(self, ) -> pd.DataFrame:
@@ -263,10 +244,7 @@ class OnePos:
             heterogeneity=self.heterogeneity,
             verbose=False,
         ).mcl_ed(
-            inflat_val=self.inflat_val,
-            exp_val=self.exp_val,
-            iter_num=self.iter_num,
-            mcl_fold_thres=self.mcl_fold_thres,
+            **self.kwargs
         )
 
     def dbscan_seq_onehot(self, ) -> pd.DataFrame:
@@ -335,7 +313,8 @@ if __name__ == "__main__":
         ed_thres=1,
         work_dir=to('data/'),
 
-        verbose=True,
+        verbose=False,  # False True
+        heterogeneity=False,  # False True
     )
 
     print(umiche.unique())

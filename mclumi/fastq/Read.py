@@ -1,22 +1,22 @@
 __version__ = "v1.0"
-__copyright__ = "Copyright 2023"
+__copyright__ = "Copyright 2024"
 __license__ = "MIT"
+__developer__ = "Jianfeng Sun"
+__maintainer__ = "Jianfeng Sun"
+__email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
 import pyfastx
 
 
-class read(object):
+class read():
 
     def __init__(self):
         pass
 
     def fromgz(self, fastq_fpn):
         """
-
-        Note
-        ----
-        read and parse a Fastq file.
+        read and parse a Fastq file with pyfastx.
 
         Parameters
         ----------
@@ -31,7 +31,8 @@ class read(object):
         placeholders = []
         qualities = []
         fq = pyfastx.Fastx(fastq_fpn)
-        for name, seq, qual, comment in fq:
+        # print(seqs)
+        for name, seq, qual in fq:
             seqs.append(''.join(seq))
             names.append(''.join(name))
         return names, seqs, placeholders, qualities

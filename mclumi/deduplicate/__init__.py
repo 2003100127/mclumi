@@ -1,8 +1,8 @@
 # ## /*** block. remote ***/
-from .monomer import *
+from .method import *
 
 # ## /*** block. local ***/
 # try:
-#     from mclumi.deduplicate.monomer import *
+#     from umiche.deduplicate.monomer import *
 # except ImportError:
 #     pass

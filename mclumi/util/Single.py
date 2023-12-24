@@ -1,16 +1,13 @@
 __version__ = "v1.0"
-__copyright__ = "Copyright 2023"
+__copyright__ = "Copyright 2024"
 __license__ = "MIT"
-__author__ = "Adam Cribbs lab"
+__developer__ = "Jianfeng Sun"
+__maintainer__ = "Jianfeng Sun"
+__email__="jianfeng.sunmt@gmail.com"
+__lab__ = "Cribbslab"
 
-import sys
-sys.path.append('../../../../../')
 
-
-class single(object):
-
-    def __init__(self, ):
-        pass
+class Single:
 
     def trim(action):
         def tube(deal):
@@ -127,7 +124,7 @@ class single(object):
 
 
 if __name__ == "__main__":
-    p = single()
+    p = Single()
     # bs = p.get()
     bs = p.getEleTrimmed(ele_loo='A')
     # bs = p.getLisTrimmed(lis_loo=[0, 1])

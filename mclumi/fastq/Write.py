@@ -1,12 +1,17 @@
 __version__ = "v1.0"
-__copyright__ = "Copyright 2023"
+__copyright__ = "Copyright 2024"
 __license__ = "MIT"
+__developer__ = "Jianfeng Sun"
+__maintainer__ = "Jianfeng Sun"
+__email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
+import os
 import gzip
+from umiche.util.Folder import folder as crtfolder
 
 
-class write(object):
+class write:
 
     def __init__(self):
         pass
@@ -24,6 +29,7 @@ class write(object):
         -------
 
         """
+        crtfolder().osmkdir(DIRECTORY=os.path.dirname(sv_fpn))
         f = gzip.open(sv_fpn, 'wt')
         for i, read in enumerate(list_2d):
             seq = str(read[0])

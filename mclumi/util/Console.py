@@ -1,12 +1,15 @@
 __version__ = "v1.0"
-__copyright__ = "Copyright 2023"
+__copyright__ = "Copyright 2024"
 __license__ = "MIT"
+__developer__ = "Jianfeng Sun"
+__maintainer__ = "Jianfeng Sun"
+__email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
 from datetime import datetime
 
 
-class console:
+class Console:
     
     def __init__(self, placeholder='logger: ', verbose=False):
         self._verbose = verbose

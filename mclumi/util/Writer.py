@@ -1,16 +1,16 @@
 __version__ = "v1.0"
-__copyright__ = "Copyright 2023"
+__copyright__ = "Copyright 2024"
 __license__ = "MIT"
+__developer__ = "Jianfeng Sun"
+__maintainer__ = "Jianfeng Sun"
+__email__="jianfeng.sunmt@gmail.com"
 __lab__ = "Cribbslab"
 
 import pandas as pd
 from functools import wraps
 
 
-class writer(object):
-
-    def __init__(self, ):
-        pass
+class Writer:
 
     def __call__(self, deal):
         generic = self.generic

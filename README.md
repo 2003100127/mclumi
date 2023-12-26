@@ -3,7 +3,6 @@
     <br>
 </h1>
 
-# mclUMI
 ![](https://img.shields.io/badge/mclUMI-executable-519dd9.svg)
 ![](https://img.shields.io/badge/last_released-Oct._2021-green.svg)
 ![](https://img.shields.io/github/stars/cribbslab/mclumi?logo=GitHub&color=blue)

@@ -34,7 +34,8 @@ class Build:
         self.hamming = Hamming()
         self.guuedge = guuedge(verbose=False)
         self.console = Console()
-        self.console.verbose = verbose
+        self.console.verbose = False
+        # self.console.verbose = verbose
 
         self.char_to_int = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
 

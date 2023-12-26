@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="" />
+    <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/gene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/multipos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/multipos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/sc.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/sc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Parameter.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Parameter.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,7 +277,7 @@
       <workItem from="1702868551922" duration="8995000" />
       <workItem from="1703166964191" duration="19312000" />
       <workItem from="1703617983160" duration="5848000" />
-      <workItem from="1703625713931" duration="4000000" />
+      <workItem from="1703625713931" duration="8382000" />
     </task>
     <servers />
   </component>

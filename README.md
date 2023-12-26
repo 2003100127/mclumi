@@ -13,14 +13,6 @@
 ###### tags: `UMI deduplication` `PCR deduplication` `scRNA-seq` `bulk-RNA-seq`
 
 ## Overview
-```
- __  __  ____ _    _   _ __  __ ___   _____           _ _    _ _   
-|  \/  |/ ___| |  | | | |  \/  |_ _| |_   _|__   ___ | | | _(_) |_ 
-| |\/| | |   | |  | | | | |\/| || |    | |/ _ \ / _ \| | |/ / | __|
-| |  | | |___| |__| |_| | |  | || |    | | (_) | (_) | |   <| | |_ 
-|_|  |_|\____|_____\___/|_|  |_|___|   |_|\___/ \___/|_|_|\_\_|\__|
-```
-
 This repository deposits the mclUMI toolkit developed by Markov clustering (MCL) network-based algorithms for precisely localizing unique UMIs and thus removing PCR duplicates. mclUMI enables a construction of sub-graphs with UMI nodes to be relatively strongly connected.
 
 ## Documentation

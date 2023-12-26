@@ -30,6 +30,10 @@ class Parameter:
         return self.params['dedup']
 
     @property
+    def tag(self, ):
+        return self.params['tag']
+
+    @property
     def work_dir(self, ):
         return self.params['work_dir']
 

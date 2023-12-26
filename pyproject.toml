@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "mclumi"
+version = "0.0.1"
+description = "UMI de-duplication using mclUMI"
+authors = [
+    "Jianfeng Sun",
+    "Adam P. Cribbs",
+]
+maintainers = [
+    "Jianfeng Sun <jianfeng.sun@ndorms.ox.ac.uk>",
+    "Adam P. Cribbs <adam.cribbs@ndorms.ox.ac.uk>",
+]
+license = "MIT"
+readme = "README.md"
+homepage = "https://cribbslab.co.uk/"
+repository = "https://github.com/cribbslab/mclumi"
+keywords = ["packaging", "mclumi"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.2"
+pandas = "^2.1.4"
+pyfastx = "^2.0.2"
+pysam = "^0.22.0"
+markov-clustering = "^0.0.6.dev0"
+click = "^8.1.7"
+pyyaml = "^6.0.1"
+pyfiglet = "^1.0.2"
+
+[tool.poetry.scripts]
+mclumi = "mclumi.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

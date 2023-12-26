@@ -21,6 +21,31 @@ console = Console()
 console.verbose = True
 
 
+def run(
+        method: str,
+        bam_fpn : str,
+        ed_thres : float,
+        work_dir : str,
+        verbose : bool,
+        **kwargs
+):
+    controller = {
+        'unique': unique,
+        'cluster': cluster,
+        'adjacency': adjacency,
+        'directional': directional,
+        'mcl': mcl,
+        'mcl_val': mcl_val,
+    }
+    return controller[method](
+        bam_fpn,
+        ed_thres,
+        work_dir,
+        verbose,
+        **kwargs
+    )
+
+
 def unique(
         bam_fpn : str,
         ed_thres : float,

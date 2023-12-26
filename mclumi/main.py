@@ -42,10 +42,11 @@ class HelpfulCmd(click.Command):
         )
 
 
-@click.command(cls=HelpfulCmd)
+# @click.command(cls=HelpfulCmd)
+@click.command()
 @click.argument('tool', type=str)
 @click.option(
-    '-pfpn', '--param_fpn', type=str,
+    '-pfpn', '--param_fpn', type=str, required=True,
     # required=True,
     help="""
         Path to a YMAL file
@@ -58,9 +59,21 @@ class HelpfulCmd(click.Command):
     """
 )
 @click.option(
-    '-ed', '--edit_distance', type=int,
+    '-wd', '--work_dir', type=str, required=True,
+    help="""
+        Path to store results in the work directory
+    """
+)
+@click.option(
+    '-ed', '--edit_distance', type=int, required=True,
     help="""
         an edit distance between two UMI sequences
+    """
+)
+@click.option(
+    '-m', '--method', type=str, required=True,
+    help="""
+        method to use for UMI deduplication
     """
 )
 @click.option(
@@ -71,12 +84,23 @@ class HelpfulCmd(click.Command):
 )
 def main(
         tool,
+        method,
         param_fpn,
+        bam_fpn,
+        work_dir,
+        edit_distance,
+        verbose,
 ):
-    params = Parameter(param_fpn)
-    len_params = params.dedup['dedup']
     print(vignette1.renderText('PhyloTres'))
+    params = Parameter(param_fpn)
+    params.dedup['dedup']
     ### @@@ dedup
     if tool == "dedup_op":
-        return
+        onepos.run(
+            method=method,
+            bam_fpn=bam_fpn,
+            work_dir=work_dir,
+            ed_thres=edit_distance,
+            verbose=verbose,
+        )
     return

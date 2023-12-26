@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/cribbslab/mclumi-dev/blob/main/img/mclumi-logo.png?raw=true" width="200" height="124">
+    <img src="https://github.com/cribbslab/mclumi-dev/blob/main/img/mclumi-logo-trans.png?raw=true" width="200" height="124">
     <br>
 </h1>
 

@@ -34,17 +34,29 @@ class HelpfulCmd(click.Command):
         click.echo(
             """
             tool 
-                dedup_op | dedup_mp | dedup_bulk | dedup_sc
+                locus | loci | bulk | single-cell
             @@@ gmat_bulk
-                phylotres gmat_bulk -rfpn D:/Programming/R/R-4.3.2/ -nspl 2 -ngene 10 -gsimulator spsimseq -wd ./phylotres/data/spsimseq_bulk.h5 -is True -vb True
+                mclumi locus -pfpn ./mclumi/data/params.yml -bfpn ./mclumi/data/example_.bam -wd ./mclumi/data/ -ed 1 -m directional
 
             """
         )
 
 
-# @click.command(cls=HelpfulCmd)
-@click.command()
+@click.command(cls=HelpfulCmd)
+# @click.command()
 @click.argument('tool', type=str)
+@click.option(
+    '-m', '--method', type=str, required=True,
+    help="""
+        method to use for UMI deduplication
+    """
+)
+@click.option(
+    '-ed', '--edit_distance', type=int, required=True,
+    help="""
+        an edit distance between two UMI sequences
+    """
+)
 @click.option(
     '-pfpn', '--param_fpn', type=str, required=True,
     # required=True,
@@ -65,19 +77,7 @@ class HelpfulCmd(click.Command):
     """
 )
 @click.option(
-    '-ed', '--edit_distance', type=int, required=True,
-    help="""
-        an edit distance between two UMI sequences
-    """
-)
-@click.option(
-    '-m', '--method', type=str, required=True,
-    help="""
-        method to use for UMI deduplication
-    """
-)
-@click.option(
-    '-vb', '--verbose', type=int,
+    '-vb', '--verbose', type=bool, default=True,
     help="""
         verbose prompts
     """
@@ -93,14 +93,24 @@ def main(
 ):
     print(vignette1.renderText('PhyloTres'))
     params = Parameter(param_fpn)
-    params.dedup['dedup']
+    print(params.dedup)
     ### @@@ dedup
-    if tool == "dedup_op":
+    if tool == "locus":
+        print("===>The {} tool is being used...".format(tool))
+        print("===>The {} method is being used...".format(method))
+        mcl_fold_thres = params.dedup["mcl_fold_thres"]
+        inflat_val = params.dedup["inflat_val"]
+        exp_val = params.dedup["exp_val"]
+        iter_num = params.dedup["iter_num"]
         onepos.run(
             method=method,
             bam_fpn=bam_fpn,
             work_dir=work_dir,
             ed_thres=edit_distance,
             verbose=verbose,
+            mcl_fold_thres=mcl_fold_thres,
+            inflat_val=inflat_val,
+            exp_val=exp_val,
+            iter_num=iter_num,
         )
     return

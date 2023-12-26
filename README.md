@@ -1,3 +1,8 @@
+<h1>
+    <img src="https://github.com/cribbslab/mclumi-dev/blob/main/img/mclumi-logo.png?raw=true" width="300" height="100">
+    <br>
+</h1>
+
 # mclUMI
 ![](https://img.shields.io/badge/mclUMI-executable-519dd9.svg)
 ![](https://img.shields.io/badge/last_released-Oct._2021-green.svg)

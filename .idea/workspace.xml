@@ -5,41 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/mclumi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mclumi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.readthedocs.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/make.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/conf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/format/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/format/input_format.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/format/output_format.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/installation.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.align.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.deduplicate.monomer.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.deduplicate.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.fastq.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.network.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.trim.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/mclumi.util.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/method/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/modules.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/quick_start_guide.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/a_single_genomic_locus.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/bulkRNAseq.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/genomic_loci.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/scRNAseq.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/tutorial/trim.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/Cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/Cluster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/gene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mclumi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mclumi/onepos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/onepos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +275,7 @@
       <workItem from="1702868551922" duration="8995000" />
       <workItem from="1703166964191" duration="19312000" />
       <workItem from="1703617983160" duration="5848000" />
-      <workItem from="1703625713931" duration="1053000" />
+      <workItem from="1703625713931" duration="3626000" />
     </task>
     <servers />
   </component>

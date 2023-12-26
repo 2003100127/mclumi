@@ -62,7 +62,9 @@ def unique(
         verbose=verbose,
         **kwargs
     )
-    return mclumi.unique()
+    df = mclumi.unique()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def cluster(
@@ -81,7 +83,9 @@ def cluster(
         verbose=verbose,
         **kwargs
     )
-    return mclumi.cluster()
+    df = mclumi.cluster()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def adjacency(
@@ -100,7 +104,9 @@ def adjacency(
         verbose=verbose,
         **kwargs
     )
-    return mclumi.adjacency()
+    df = mclumi.adjacency()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def directional(
@@ -119,7 +125,9 @@ def directional(
         verbose=verbose,
         **kwargs
     )
-    return mclumi.directional()
+    df = mclumi.directional()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def mcl(
@@ -138,7 +146,9 @@ def mcl(
         verbose=verbose,
         **kwargs
     )
-    return mclumi.mcl()
+    df = mclumi.mcl()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def mcl_val(
@@ -157,7 +167,9 @@ def mcl_val(
         verbose=verbose,
         **kwargs,
     )
-    return mclumi.mcl_val()
+    df = mclumi.mcl_val()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 def mcl_ed(
@@ -176,7 +188,9 @@ def mcl_ed(
         verbose=verbose,
         **kwargs,
     )
-    return mclumi.mcl_ed()
+    df = mclumi.mcl_ed()
+    print("===>Analysis has been complete and results have been saved!")
+    return df
 
 
 if __name__ == "__main__":

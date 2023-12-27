@@ -517,7 +517,7 @@ class get_bundles:
                 # keep track of observed contigs for each gene
                 self.observed_contigs[gene].add(transcript)
         # yield remaining bundles
-        print('tsdwwww', c)
+        # print('tsdwwww', c)
         for p in sorted(self.reads_dict.keys()):
             for k in sorted(self.reads_dict[p].keys()):
                 yield self.reads_dict[p][k], k, "bundle"

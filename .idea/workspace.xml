@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/gene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Bundle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mclumi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/multipos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/multipos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/sc.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/sc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/prep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mclumi/util/Parameter.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Parameter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,24 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.BundlePos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.multipos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.onepos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sc.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/mclumi&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.BundlePos.executor": "Run",
+    "Python.multipos.executor": "Run",
+    "Python.onepos.executor": "Run",
+    "Python.prep.executor": "Run",
+    "Python.sc.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "D:/Document/Programming/Python/mclumi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Document\Programming\Python\deepbio\symphony\github\mclumi\docs\source\format" />
@@ -79,7 +78,7 @@
       <recent name="D:\Document\Programming\Python\deepbio\symphony\github\mclumi\mclumi\external" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sc">
+  <component name="RunManager" selected="Python.prep">
     <configuration name="BundlePos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mclumi" />
       <option name="ENV_FILES" value="" />
@@ -95,29 +94,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mclumi/align/BundlePos.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Dechimeric" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="mclumi" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mclumi/deduplicate/trimer" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mclumi/deduplicate/trimer/Dechimeric.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -172,6 +148,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="prep" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mclumi" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mclumi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mclumi/prep.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mclumi" />
       <option name="ENV_FILES" value="" />
@@ -197,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.prep" />
         <item itemvalue="Python.sc" />
         <item itemvalue="Python.multipos" />
         <item itemvalue="Python.onepos" />
         <item itemvalue="Python.BundlePos" />
-        <item itemvalue="Python.Dechimeric" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +276,7 @@
       <workItem from="1702868551922" duration="8995000" />
       <workItem from="1703166964191" duration="19312000" />
       <workItem from="1703617983160" duration="5848000" />
-      <workItem from="1703625713931" duration="8382000" />
+      <workItem from="1703625713931" duration="9754000" />
     </task>
     <servers />
   </component>

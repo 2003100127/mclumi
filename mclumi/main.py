@@ -34,9 +34,9 @@ class HelpfulCmd(click.Command):
                 locus | loci | bulk | sc
             
             method
-                
+                mcl | mcl_val | mcl_ed | unique | cluster | adjacency | directional
 
-            command
+            example commands
                 locus:
                     mclumi locus -m mcl -ed 1 -pfpn ./mclumi/data/params.yml -bfpn ./mclumi/data/example_.bam -wd ./mclumi/data/ -vb True
                 loci:

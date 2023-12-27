@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mclumi"
-version = "0.0.3"
+version = "0.0.2"
 description = "UMI de-duplication using mclUMI"
 authors = [
     "Jianfeng Sun",

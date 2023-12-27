@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mclumi",
-    version="0.0.1",
+    version="0.0.4",
     keywords=["pip", "mclumi"],
     description="UMI de-duplication",
     long_description="UMI de-duplication mclUMI",

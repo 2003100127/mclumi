@@ -1,6 +1,9 @@
 # ingore data folder
+.id
+git/
 mclumi/data/
 shell/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

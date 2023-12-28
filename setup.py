@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mclumi",
-    version="0.0.4",
+    version="0.0.1",
     keywords=["pip", "mclumi"],
     description="UMI de-duplication",
     long_description="UMI de-duplication mclUMI",
@@ -19,13 +19,13 @@ setup(
     install_requires=[
         'pandas',
         'numpy',
-        'pysam',
-        'pyfastx',
+        # 'pysam',
+        # 'pyfastx',
         'click',
         'pyyaml',
         'scikit-learn',
-        'markov_clustering==0.0.6.dev0',
-        'pyfiglet==0.8.post1',
+        'markov_clustering', # ==0.0.6.dev0
+        'pyfiglet', # ==0.8.post1
     ],
     entry_points={
         'console_scripts': [

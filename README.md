@@ -36,7 +36,7 @@ Please check https://cribbslab.github.io/mclumi for how to use mclUMI.
 
 mclUMI can be installed in the following ways.
 
-* PyPI (https://pypi.org/project/mclumi)
+* ![PyPI](https://img.shields.io/badge/-PyPI-000?&logo=PyPI) (https://pypi.org/project/mclumi)
 
   ```bash
   conda create --name mclumi python=3.11
@@ -46,7 +46,7 @@ mclUMI can be installed in the following ways.
   pip install mclumi --upgrade
   ```
   
-* Conda (https://anaconda.org/Jianfeng_Sun/mclumi)
+* ![Anaconda](https://img.shields.io/badge/-Anaconda-000?&logo=Anaconda) (https://anaconda.org/Jianfeng_Sun/mclumi)
 
   ```bash
   conda create --name mclumi python=3.11
@@ -56,13 +56,13 @@ mclUMI can be installed in the following ways.
   conda install -c jianfeng_sun mclumi
   ```
   
-* Docker (https://hub.docker.com/repository/docker/2003100127/mclumi/general)
+* ![Docker](https://img.shields.io/badge/-Docker-000?&logo=Docker) (https://hub.docker.com/repository/docker/2003100127/mclumi/general)
 
   ```bash
   docker pull 2003100127/mclumi:latest
   ```
 
-* Git (latest)
+* ![Github](https://img.shields.io/badge/-Github-000?&logo=Github)
 
   ```bash
   conda create --name mclumi python=3.11
@@ -116,8 +116,9 @@ mclUMI can be installed in the following ways.
     year = {2024},
 }
 ```
-## Homepage
-https://www.ndorms.ox.ac.uk/team/adam-cribbs
+
+## 🏠 Homepage
+[📍Cribbslab](https://www.ndorms.ox.ac.uk/team/adam-cribbs) 
 
 ## 📧 Reach us
 [![Linkedin Badge](https://img.shields.io/badge/-Jianfeng_Sun-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jianfeng-sun-2ba9b1132)](https://www.linkedin.com/in/jianfeng-sun-2ba9b1132) 

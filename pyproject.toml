@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mclumi"
-version = "0.0.2"
+version = "0.0.4"
 description = "UMI de-duplication using mclUMI"
 authors = [
     "Jianfeng Sun",
@@ -22,11 +22,11 @@ numpy = "^1.26.2"
 pandas = "^2.1.4"
 pyfastx = "^2.0.2"
 pysam = "^0.22.0"
-markov-clustering = "^0.0.6.dev0"
 click = "^8.1.7"
 pyyaml = "^6.0.1"
 pyfiglet = "^1.0.2"
 scikit-learn = "^1.3.2"
+markov-clustering = "*" # anyversion if using 0.0.6.dev0, it will conflict by searching 0.0.6 and omitting .dev0
 
 [tool.poetry.scripts]
 mclumi = "mclumi.main:main"

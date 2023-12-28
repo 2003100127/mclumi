@@ -46,6 +46,8 @@ class HelpfulCmd(click.Command):
                     mclumi bulk -m mcl -ed 1 -pfpn ./mclumi/data/params.yml -bfpn ./mclumi/data/RM82CLK1_S3_featurecounts_gene_sorted.bam -wd ./mclumi/data/ -vb True
                 sc:
                     mclumi sc -m mcl -ed 1 -pfpn ./mclumi/data/params.yml -bfpn ./mclumi/data/hgmm_100_STAR_FC_sorted.bam -wd ./mclumi/data/ -vb True
+                bundle
+                    mclumi bundle -m umi-tools -bfpn ./mclumi/data/example.bam -wd ./mclumi/data/ -vb True
             
             """
         )

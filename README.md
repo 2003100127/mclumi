@@ -3,176 +3,123 @@
     <br>
 </h1>
 
-![](https://img.shields.io/badge/mclUMI-executable-519dd9.svg)
-![](https://img.shields.io/badge/last_released-Oct._2021-green.svg)
+
+
+[![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/mclumi/badges/latest_release_date.svg)](https://anaconda.org/jianfeng_sun/mclumi)
+![PyPI](https://img.shields.io/pypi/v/mclumi?logo=PyPI)
+![Docker Image Version (latest)](https://img.shields.io/docker/v/2003100127/mclumi)
+![Docker Pulls](https://img.shields.io/docker/pulls/2003100127/mclumi)
+[![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/mclumi/badges/version.svg)](https://anaconda.org/jianfeng_sun/mclumi)
+![](https://img.shields.io/docker/automated/2003100127/mclumi.svg)
 ![](https://img.shields.io/github/stars/cribbslab/mclumi?logo=GitHub&color=blue)
-![](https://img.shields.io/pypi/v/mclumix?logo=PyPI)
 [![Documentation Status](https://readthedocs.org/projects/mclumi/badge/?version=latest)](https://mclumi.readthedocs.io/en/latest/?badge=latest)
 [![Downloads](https://pepy.tech/badge/mclumi)](https://pepy.tech/project/mclumi)
 
-###### tags: `UMI deduplication` `PCR deduplication` `scRNA-seq` `bulk-RNA-seq`
+<hr>
+
+#### Platform
+
+![Python](https://img.shields.io/badge/-Python-000?&logo=Python)
+![Docker](https://img.shields.io/badge/-Docker-000?&logo=Docker)
+![Anaconda](https://img.shields.io/badge/-Anaconda-000?&logo=Anaconda)
+![PyPI](https://img.shields.io/badge/-PyPI-000?&logo=PyPI)
+
+###### tags: `UMI deduplication` `PCR artefacts` `scRNA-seq` `bulk RNA-seq`
 
 ## Overview
-This repository deposits the mclUMI toolkit developed by Markov clustering (MCL) network-based algorithms for precisely localizing unique UMIs and thus removing PCR duplicates. mclUMI enables a construction of sub-graphs with UMI nodes to be relatively strongly connected.
+mclUMI is developed by the Markov clustering (MCL) network-based algorithm for deduplicating redundant UMIs and thus removing PCR duplicates. mclUMI enables construction of sub-graphs where UMI nodes are relatively strongly connected.
 
-## Documentation
-The API documentation of mclUMI is available at https://mclumi.herokuapp.com and https://mclumi.readthedocs.io/en/latest.
+## 📔 Documentation
+Please check https://cribbslab.github.io/mclumi for how to use mclUMI.
 
-## System requirement
-Linux or Mac
+## 🛠️ Installation Steps
 
-## Installation
-We tested the software installation on a Linux system, which has the following configuration:
-* Distributor ID: Ubuntu
-* Description:    Ubuntu 20.04.3
-* Release:        20.04
-* Codename:       focal
+mclUMI can be installed in the following ways.
 
-The anaconda is configured as:
-* Conda version: 4.11.0
+* PyPI (https://pypi.org/project/mclumi)
 
-> You can use `conda update conda` and `conda update anaconda` to keep your anaconda up-to-date.
-
-We recommend using a `Python` of version **`3.9.1`** as the base python to create your conda environment because `NumPy` and `Pandas` in a `Python` of higher version `3.9` may require a few dependencies that are not included in the installation of mclUMI or make conflicts with existing packages.
-
-**Step 1**: create a conda environment, e.g., mclumi
-  ```angular2html
-  conda create --name mclumi python=3.9.1
+  ```bash
+  conda create --name mclumi python=3.11
       
   conda activate mclumi
+  
+  pip install mclumi --upgrade
   ```
   
-  <h1>
-      <img src="https://github.com/cribbslab/mclumi/blob/main/imgs/conda-setting.png?raw=true">
-      <br>
-  </h1>
+* Conda (https://anaconda.org/Jianfeng_Sun/mclumi)
 
-**Step 2**: sourced from https://pypi.org/project/mclumix.
-  ```angular2html
-  pip install --upgrade mclumix
+  ```bash
+  conda create --name mclumi python=3.11
+      
+  conda activate mclumi
+  
+  conda install -c jianfeng_sun mclumi
   ```
-After a two-step installation procedure, you should see the following outputs.
-  <h1>
-      <img src="https://github.com/cribbslab/mclumi/blob/main/imgs/install.png?raw=true">
-      <br>
-  </h1>
+  
+* Docker (https://hub.docker.com/repository/docker/2003100127/mclumi/general)
 
-## Usage
-To ease the use of mclUMI for multiple groups of users, we have made it usable in both command-line interface (CLI) and inline mode. 
+  ```bash
+  docker pull 2003100127/mclumi:latest
+  ```
 
-### 1. CLI
-1.1 Parameter illustration
+* Git (latest)
 
-By typing `mclumi -h`, you are able to see the package usage as shown below.
+  ```bash
+  conda create --name mclumi python=3.11
+    
+  conda activate mclumi
+  
+  git clone https://github.com/cribbslab/mclumi.git
+  
+  cd mclumi
+  
+  pip install .
+  ```
 
-```
-usage: mclumi [-h] [--read_structure read_structure] [--lens lens]
-              [--input input] [--output output] [--method method]
-              [--input_bam input_bam] [--edit_dist edit dist]
-              [--inflation_value inflation_value]
-              [--expansion_value expansion_value]
-              [--iteration_number iteration_number]
-              [--mcl_fold_thres mcl_fold_thres] [--is_sv is_sv]
-              [--output_bam output_bam] [--verbose verbose]
-              [--pos_tag pos_tag] [--gene_assigned_tag gene_assigned_tag]
-              [--gene_is_assigned_tag gene_is_assigned_tag]
-              tool
+## 🚀 Get started
 
-Welcome to the mclumi toolkit
 
-positional arguments:
-  tool                  trim, dedup_basic, dedup_pos, dedup_gene, dedup_sc
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --read_structure read_structure, -rs read_structure
-                        str - the read structure with elements in conjunction
-                        with +, e.g., primer_1+umi_1+seq_1+umi_2+primer_2
-  --lens lens, -l lens  str - lengths of all sub-structures separated by +,
-                        e.g., 20+10+40+10+20 if the read structure is
-                        primer_1+umi_1+seq_1+umi_2+primer_2
-  --input input, -i input
-                        str - input a fastq file in gz format for trimming
-                        UMIs
-  --output output, -o output
-                        str - output a UMI-trimmed fastq file in gz format.
-  --method method, -m method
-                        str - a dedup method: unique | cluster | adjacency |
-                        directional | mcl | mcl_ed | mcl_val
-  --input_bam input_bam, -ibam input_bam
-                        str - input a bam file curated by requirements of
-                        different dedup modules: dedup_basic, dedup_pos,
-                        dedup_gene, dedup_sc
-  --edit_dist edit dist, -ed edit dist
-                        int - an edit distance used for building graphs at a
-                        range of [1, l) where l is the length of a UMI
-  --inflation_value inflation_value, -infv inflation_value
-                        float - an inflation value for MCL, 2.0 by default
-  --expansion_value expansion_value, -expv expansion_value
-                        int - an expansion value for MCL at a range of (1,
-                        +inf), 2 by default
-  --iteration_number iteration_number, -itern iteration_number
-                        int - iteration number for MCL at a range of (1,
-                        +inf), 100 by default
-  --mcl_fold_thres mcl_fold_thres, -fthres mcl_fold_thres
-                        float - a fold threshold for MCL at a range of (1, l)
-                        where l is the length of a UMI.
-  --is_sv is_sv, -issv is_sv
-                        bool - to make sure if the deduplicated reads writes
-                        to a bam file (True by default or False)
-  --output_bam output_bam, -obam output_bam
-                        str - output UMI-deduplicated summary statistics to a
-                        txt file.
-  --verbose verbose, -vb verbose
-                        bool - to enable if output logs are on console (True
-                        by default or False)
-  --pos_tag pos_tag, -pt pos_tag
-                        str - to enable deduplication on the position tags (PO
-                        recommended when your bam is tagged)
-  --gene_assigned_tag gene_assigned_tag, -gt gene_assigned_tag
-                        str - to enable deduplication on the gene tag (XT
-                        recommended)
-  --gene_is_assigned_tag gene_is_assigned_tag, -gist gene_is_assigned_tag
-                        str - to check if reads are assigned the gene tag (XS
-                        recommended)
+* shell
+
+    ```wrap
+    # convert example.bam to example_bundle.bam in bundle forms as in UMI-tools.
+    mclumi bundle -m umi-tools -bfpn ./mclumi/data/example.bam -wd ./mclumi/data/ -vb True
+
+    # deduplicate UMIs
+    mclumi loci -m mcl -ed 1 -pfpn ./mclumi/data/params.yml -bfpn ./mclumi/data/example_bundle.bam -wd ./mclumi/data/ -vb True
+    ```
+
+* python
+
+    ```python
+    import mclumi as mumi
+
+    mumi.multipos.run(
+        method='mcl',
+        bam_fpn='example_bundle.bam',
+        ed_thres=1,
+        pos_tag='PO',
+        work_dir='./',
+        verbose=True,
+    )
+    ```
+
+## 📄 Citation
+```angular2html
+@article{mclumi,
+    title = {mclUMI},
+    author = {Jianfeng Sun and Adam P. Cribbs},
+    doi = {xxx},
+    url = {https://github.com/cribbslab/mclumi},
+    journal = {Biorxiv}
+    year = {2024},
+}
 ```
 
-1.2 Example commands
-
-* extracting and attaching umis to names of reads in fastq format
-    ```
-    mclumi trim -i ./pcr_1.fastq.gz -o ./pcr_trimmed.fastq.gz -rs primer_1+umi_1+seq_1+umi_2+primer_2 -l 20+10+40+10+20
-    ```
-
-* deduplication on only one genome position 
-    ```
-    mclumi dedup_basic -m mcl -ed 1 -infv 1.6 -expv 2 -ibam ./example_bundle.bam -obam ./dedup.bam
-    ```
-
-* deduplication per genome position
-    ```
-   mclumi dedup_pos -m mcl -pt PO -ed 1 -infv 1.6 -expv 2 -ibam ./example_bundle.bam -obam ./basic/dedup.bam
-    ```
-
-* deduplication per gene (applicable to bulk RNA-seq data)
-    ```
-    mclumi dedup_gene -m directional -gt XT -gist XS -ed 1 -ibam ./hgmm_100_STAR_FC_sorted.bam -obam ./dedup.bam
-    ```
-
-* deduplication per cell per gene (applicable to single-cell RNA-seq data)
-    ```
-    mclumi dedup_sc -m directional -gt XT -gist XS -ed 1 -ibam ./hgmm_100_STAR_FC_sorted.bam -obam ./dedup.bam
-    ```
-
-### 2. Inline
-
-see Jupyter notebooks
-```
-./notebooks/
-```
-
-## Output
-see `./notebooks/results_spelt_out.ipynb` for result format. More types of output format are about to be added.
-
-## Contact
+## 📧 Reach us
+[![Linkedin Badge](https://img.shields.io/badge/-Jianfeng_Sun-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jianfeng-sun-2ba9b1132)](https://www.linkedin.com/in/jianfeng-sun-2ba9b1132) 
+[![Gmail Badge](https://img.shields.io/badge/-jianfeng.sunmt@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jianfeng.sunmt@gmail.com)](mailto:jianfeng.sunmt@gmail.com)
+[![Outlook Badge](https://img.shields.io/badge/jianfeng.sun@ndorms.ox.ac.uk--000?style=social&logo=microsoft-outlook&logoColor=0078d4&link=mailto:jianfeng.sun@ndorms.ox.ac.uk)](mailto:jianfeng.sun@ndorms.ox.ac.uk)
+<a href="https://twitter.com/Jianfeng_Sunny" ><img src="https://img.shields.io/twitter/follow/Jianfeng_Sunny.svg?style=social" /> </a>
 Homepage: https://www.ndorms.ox.ac.uk/team/adam-cribbs  

@@ -1,31 +1,43 @@
-# Welcome to the homepage of ![Image title](./img/index/Tresor-logo.png){ width="60" }Tresor.
 
-> This is where we show how you can use Tresor best.
+# Welcome to the homepage of ![Image title](./img/mcl/mclumi-logo.jpg){ width="40" }mclUMI!
 
-Tresor is designed to simulate either short-reads or long-reads under bulk RNA-seq and scRNA-seq conditions across six scenarios: specifically by varying sequencing errors, PCR errors, lengths of unique molecular identifiers (UMIs), sequencing depths, numbers of PCR cycles, and PCR amplification rates, respectively. 
+!!! quote "What is it?"
 
-:rocket: It runs at a fast speed!
+    For UMI collapsing/deduplication
 
-:fontawesome-solid-ear-deaf: A full set of funtionalities of a read simulation tool!
+
+mclUMI is a toolkit developed by using the Markov clustering (MCL) network-based algorithm for correcting UMI errors and thus precisely counting unique UMIs. mclUMI is implemented with Python.
 
 <figure markdown="span">
-  ![Image title](./img/index/Tresor-homepage.jpg){ width="800" }
-  <figcaption><strong></strong>Tresor workflow</figcaption>
+  ![Image title](../../img/mcl/mclumi_short.jpg){ width="800" }
+  <figcaption><strong>Fig</strong> 1. Schematic of mclUMI for UMI deduplication</figcaption>
 </figure>
+
 
 ## Features
 
-The software outputs sequencing libraries that include comprehensive annotations, enabling the tracking of both the original and PCR-amplified molecules under complex conditions, such as sample multiplexing with Unique Molecular Identifiers (UMIs) and cell barcodes. These features are instrumental in quantifying changes in the number of PCR duplicates across different experiment settings. By providing these detailed annotations, Tensor supports both the evaluation of existing UMI deduplication tools and the spur of the development of novel methodologies.
+There is a summary for technical features of mclUMI.
 
-- [x] The first tool for simulating errors in flexiblely designed sequencing protocols during bead synthesis
+!!! tip "Technical features"
+
+    It provides 4 modules for UMI deduplication, including 
+    
+        dedup_basic, dedup_pos, dedup_gene, and dedup_sc
+    
+    Each module for UMI deduplication includes 7 algorithms
+
+        mcl, mcl_ed, mcl_val, unique, cluster, adjacency, and directional
+
+    Each takes as input the alignment result in a bam file and outputs a UMI-deduplicated alignment in a new bam file and another 2 summary files.
+
+- [x] Algorithm category
+    * [x] Graph-based UMI collapsing
+    * [x] Euclidean distance-based UMI collapsing
 - [x] Installation package
     * [x] PyPI
     * [x] Conda
     * [x] Docker
     * [x] Github
-- [x] Sequencing technology
-    * [x] Short reads (Illumina)
-    * [x] Long reads (Oxford Nanopore Technologies)
 - [x] Sequencing level
     * [x] Single genomic locus
     * [x] Bulk RNA-seq
@@ -33,19 +45,31 @@ The software outputs sequencing libraries that include comprehensive annotations
 
 ## Programming
 
-Tresor is implemented with Python, which can be accessed through both Python and Shell commands. 
+mclUMI provides two user-friendly interfaces to run internally (Python inline) or externally (CLI).
 
 * `language` - Python
-* `module` - Object Oriented Programming (OOP) & Aspect Oriented Programming (AOP)
+* `module` - Object Oriented Programming (OOP)
 * `command` - Python and Shell
 
+In Python
 ``` py
-$ import tresor as ts
-ts.locus
-ts.gene
-ts.sc
+import mclumi as mu
+
+mu.onepos
+mu.multipos
+mu.gene
+mu.sc
+...
 ```
-Or
+
+In Shell
+
 ``` sh
-$ tresor function_name -cfpn configuration.yml ...
+$ mclumi [module | str] \
+-m [method | str] \
+-ed [edit distance | int]  \
+-pfpn [yaml file | str] \
+-bfpn [bam file | str] \
+-wd [output path | str] \
+-vb [if verbose | boolean]
 ```

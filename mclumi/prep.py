@@ -62,10 +62,10 @@ if __name__ == "__main__":
         verbose=True,
     ))
 
-    # print(run(
-    #     method='umi-tools',
-    #     bam_fpn=to('data/example.bam'),
-    #     # params=Parameter().bundle_umi_tools,
-    #     work_dir=to('data/'),
-    #     verbose=True,
-    # ))
+    print(run(
+        method='umi-tools',
+        bam_fpn=to('data/example.bam'),
+        # params=Parameter().bundle_umi_tools,
+        work_dir=to('data/'),
+        verbose=True,
+    ))

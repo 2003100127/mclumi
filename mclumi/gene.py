@@ -228,53 +228,53 @@ def mcl_ed(
 if __name__ == "__main__":
     from mclumi.path import to
 
-    df_unique = unique(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-    )
-    print(df_unique)
-
-    df_cluster = cluster(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-    )
-    print(df_cluster)
-
-    df_adjacency = adjacency(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-    )
-    print(df_adjacency)
-
-    df_directional = directional(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-    )
-    print(df_directional)
+    # df_unique = unique(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_unique)
+    #
+    # df_cluster = cluster(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_cluster)
+    #
+    # df_adjacency = adjacency(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_adjacency)
+    #
+    # df_directional = directional(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    # )
+    # print(df_directional)
 
     df_mcl = mcl(
         bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
@@ -282,7 +282,7 @@ if __name__ == "__main__":
         gene_assigned_tag='XT',
         gene_is_assigned_tag='XS',
         work_dir=to('data/'),
-        verbose=False,  # False True
+        verbose=True,  # False True
 
         heterogeneity=False,  # False True
 
@@ -292,37 +292,37 @@ if __name__ == "__main__":
     )
     print(df_mcl)
 
-    df_mcl_val = mcl_val(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-
-        mcl_fold_thres=1.5,
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-    )
-    print(df_mcl_val)
-
-    df_mcl_ed = mcl_ed(
-        bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
-        ed_thres=1,
-        gene_assigned_tag='XT',
-        gene_is_assigned_tag='XS',
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-
-        mcl_fold_thres=1.5,
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-    )
-    print(df_mcl_ed)
-
+    # df_mcl_val = mcl_val(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    #
+    #     mcl_fold_thres=1.5,
+    #     inflat_val=1.6,
+    #     exp_val=2,
+    #     iter_num=100,
+    # )
+    # print(df_mcl_val)
+    #
+    # df_mcl_ed = mcl_ed(
+    #     bam_fpn=to('data/hgmm_100_STAR_FC_sorted.bam'),
+    #     ed_thres=1,
+    #     gene_assigned_tag='XT',
+    #     gene_is_assigned_tag='XS',
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    #
+    #     mcl_fold_thres=1.5,
+    #     inflat_val=1.6,
+    #     exp_val=2,
+    #     iter_num=100,
+    # )
+    # print(df_mcl_ed)
+    #

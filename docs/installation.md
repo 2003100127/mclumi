@@ -6,7 +6,7 @@ There is no requirement for mclUMI, a cross-platform package.
 
 ## PyPI
 
-[mclumi homepage](https://pypi.org/project/mclumi/)
+[mclumi homepage on PyPI](https://pypi.org/project/mclumi/)
 
 ```shell
 # create a conda environment

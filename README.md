@@ -115,11 +115,10 @@ mclUMI can be installed in the following ways.
 ## 📄 Citation
 ```angular2html
 @article{mclumi,
-    title = {mclUMI},
+    title = {mclUMI: Markov clustering of unique molecular identifiers allows removing PCR duplicates dynamically},
     author = {Jianfeng Sun and Adam P. Cribbs},
     doi = {xxx},
     url = {https://github.com/cribbslab/mclumi},
-    journal = {Biorxiv}
     year = {2024},
 }
 ```

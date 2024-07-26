@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/cribbslab/mclumi-dev/blob/main/img/mclumi-logo-trans.png?raw=true" width="200" height="124">
+    <img src="https://github.com/2003100127/mclumi/blob/main/img/mclumi-logo-trans.png?raw=true" width="200" height="124">
     <br>
 </h1>
 
@@ -11,7 +11,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/2003100127/mclumi)
 [![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/mclumi/badges/version.svg)](https://anaconda.org/jianfeng_sun/mclumi)
 ![](https://img.shields.io/docker/automated/2003100127/mclumi.svg)
-![](https://img.shields.io/github/stars/cribbslab/mclumi?logo=GitHub&color=blue)
+![](https://img.shields.io/github/stars/2003100127/mclumi?logo=GitHub&color=blue)
 [![Documentation Status](https://readthedocs.org/projects/mclumi/badge/?version=latest)](https://mclumi.readthedocs.io/en/latest/?badge=latest)
 [![Downloads](https://pepy.tech/badge/mclumi)](https://pepy.tech/project/mclumi)
 
@@ -37,7 +37,7 @@
 mclUMI is developed by the Markov clustering (MCL) network-based algorithm for deduplicating redundant UMIs and thus removing PCR duplicates. mclUMI enables construction of sub-graphs where UMI nodes are relatively strongly connected.
 
 ## 📔 Documentation
-Please check https://cribbslab.github.io/mclumi for how to use mclUMI.
+Please check https://2003100127.github.io/mclumi for how to use mclUMI.
 
 ## 🛠️ Installation Steps
 
@@ -76,7 +76,7 @@ mclUMI can be installed in the following ways.
     
   conda activate mclumi
   
-  git clone https://github.com/cribbslab/mclumi.git
+  git clone https://github.com/2003100127/mclumi.git
   
   cd mclumi
   
@@ -118,7 +118,7 @@ mclUMI can be installed in the following ways.
     title = {mclUMI: Markov clustering of unique molecular identifiers allows removing PCR duplicates dynamically},
     author = {Jianfeng Sun and Adam P. Cribbs},
     doi = {xxx},
-    url = {https://github.com/cribbslab/mclumi},
+    url = {https://github.com/2003100127/mclumi},
     year = {2024},
 }
 ```

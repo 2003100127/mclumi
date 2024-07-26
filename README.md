@@ -26,6 +26,13 @@
 
 ###### tags: `UMI deduplication` `PCR artefacts` `scRNA-seq` `bulk RNA-seq`
 
+```yaml
+                   ____  ____  _______
+   ____ ___  _____/ / / / /  |/  /  _/
+  / __ `__ \/ ___/ / / / / /|_/ // /  
+ / / / / / / /__/ / /_/ / /  / // /   
+/_/ /_/ /_/\___/_/\____/_/  /_/___/
+```
 ## Overview
 mclUMI is developed by the Markov clustering (MCL) network-based algorithm for deduplicating redundant UMIs and thus removing PCR duplicates. mclUMI enables construction of sub-graphs where UMI nodes are relatively strongly connected.
 

@@ -3,14 +3,14 @@ from setuptools import setup, find_packages
 setup(
     name="mclumi",
     version="0.0.1",
-    keywords=["pip", "mclumi"],
+    keywords=["conda", "mclumi"],
     description="UMI de-duplication",
     long_description="UMI de-duplication mclUMI",
     license="MIT",
 
-    url="https://github.com/cribbslab; https://github.com/2003100127",
+    url="https://github.com/cribbslab, https://github.com/2003100127",
     author="Jianfeng Sun",
-    author_email="jianfeng.sun@ndorms.ox.ac.uk",
+    author_email="jianfeng.sun@ndorms.ox.ac.uk, adam.cribbs@ndorms.ox.ac.uk",
 
     packages=find_packages(),
     include_package_data=True,

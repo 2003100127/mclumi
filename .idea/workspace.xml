@@ -5,12 +5,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/conda_publish.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/pypi_publish.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/conda.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/conda.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mclumi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/conda.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/docker.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/pypi.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/mclumi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/conda/conda_build_config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/conda/meta.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/all_ave_eds.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/ave_eds.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/conda-setting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/install.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/mclumi-logo-trans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/img/mclumi-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/Build.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/Bundle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/Reader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/Relation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/Writer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/bam/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/Gadgetry.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/Gene.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/MultiPos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/OnePos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/SingleCell.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/Tabulate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/heterogeneity/Trace.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/heterogeneity/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/Adjacency.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/Cluster.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/Clustering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/Directional.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/MarkovClustering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/ReformKit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/method/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/pipeline/Heterogeneity.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/pipeline/Simulation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/deduplicate/pipeline/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/external/UMItoolsSamMethods.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/external/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/fastq/Convert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/fastq/Read.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/fastq/Write.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/fastq/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/gene.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/Adjacency.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/CC.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/Edge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/bfs/ConnectedComponent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/bfs/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/dfs/Visit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/dfs/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/unweighted/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/unweighted/repr/Adjacency.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/unweighted/repr/Edge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/unweighted/repr/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/weighted/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/weighted/repr/Adjacency.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/graph/undirected/weighted/repr/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/multipos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/onepos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/prep.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/sc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Console.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Folder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Hamming.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Parameter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Reader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Single.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/Writer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/mclumi/util/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/data_processing_protocol.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/dedup_basic.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/dedup_gene.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/dedup_pos.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/dedup_sc.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/graph_deduplication_drills.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/results_spelt_out.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/notebooks/trim.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/poetry.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git/2003100127/setup.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +160,7 @@
     &quot;Python.sc.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/mclumi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/tresor&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -281,7 +377,22 @@
       <workItem from="1703617983160" duration="5848000" />
       <workItem from="1703625713931" duration="13833000" />
       <workItem from="1703647505298" duration="12053000" />
-      <workItem from="1703696023036" duration="27977000" />
+      <workItem from="1703696023036" duration="32383000" />
+      <workItem from="1704645627385" duration="600000" />
+      <workItem from="1705354019936" duration="1710000" />
+      <workItem from="1705606413449" duration="677000" />
+      <workItem from="1708206937818" duration="49000" />
+      <workItem from="1712164847107" duration="1767000" />
+      <workItem from="1712267949683" duration="265000" />
+      <workItem from="1712329011025" duration="1215000" />
+      <workItem from="1712782050315" duration="611000" />
+      <workItem from="1713168520153" duration="194000" />
+      <workItem from="1713210412112" duration="189000" />
+      <workItem from="1714180810468" duration="1000" />
+      <workItem from="1721427777654" duration="3210000" />
+      <workItem from="1721854868723" duration="2860000" />
+      <workItem from="1721951500870" duration="607000" />
+      <workItem from="1721995288444" duration="393000" />
     </task>
     <servers />
   </component>

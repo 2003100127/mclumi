@@ -196,16 +196,16 @@ def mcl_ed(
 if __name__ == "__main__":
     from mclumi.path import to
 
-    # df_unique = unique(
-    #     bam_fpn=to('data/example_bundle.bam'),
-    #     ed_thres=1,
-    #     work_dir=to('data/'),
-    #     verbose=False,  # False True
-    #
-    #     heterogeneity=False,  # False True
-    # )
-    # print(df_unique)
-    #
+    df_unique = unique(
+        bam_fpn=to('data/example_bundle.bam'),
+        ed_thres=1,
+        work_dir=to('data/'),
+        verbose=False,  # False True
+
+        heterogeneity=False,  # False True
+    )
+    print(df_unique)
+
     # df_cluster = cluster(
     #     bam_fpn=to('data/example_bundle.bam'),
     #     ed_thres=1,
@@ -236,47 +236,47 @@ if __name__ == "__main__":
     # )
     # print(df_directional)
 
-    df_mcl = mcl(
-        bam_fpn=to('data/example_bundle.bam'),
-        ed_thres=1,
-        work_dir=to('data/'),
-        verbose=False,  # False True
+    # df_mcl = mcl(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    #
+    #     inflat_val=1.6,
+    #     exp_val=2,
+    #     iter_num=100,
+    # )
+    # print(df_mcl)
 
-        heterogeneity=False,  # False True
+    # df_mcl_val = mcl_val(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    #
+    #     mcl_fold_thres=1.5,
+    #     inflat_val=1.6,
+    #     exp_val=2,
+    #     iter_num=100,
+    # )
+    # print(df_mcl_val)
 
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-    )
-    print(df_mcl)
-
-    df_mcl_val = mcl_val(
-        bam_fpn=to('data/example_bundle.bam'),
-        ed_thres=1,
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-
-        mcl_fold_thres=1.5,
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-    )
-    print(df_mcl_val)
-
-    df_mcl_ed = mcl_ed(
-        bam_fpn=to('data/example_bundle.bam'),
-        ed_thres=1,
-        work_dir=to('data/'),
-        verbose=False,  # False True
-
-        heterogeneity=False,  # False True
-
-        mcl_fold_thres=1.5,
-        inflat_val=1.6,
-        exp_val=2,
-        iter_num=100,
-    )
-    print(df_mcl_ed)
+    # df_mcl_ed = mcl_ed(
+    #     bam_fpn=to('data/example_bundle.bam'),
+    #     ed_thres=1,
+    #     work_dir=to('data/'),
+    #     verbose=False,  # False True
+    #
+    #     heterogeneity=False,  # False True
+    #
+    #     mcl_fold_thres=1.5,
+    #     inflat_val=1.6,
+    #     exp_val=2,
+    #     iter_num=100,
+    # )
+    # print(df_mcl_ed)
 

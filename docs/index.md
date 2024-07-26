@@ -9,7 +9,7 @@
 mclUMI is a toolkit developed by using the Markov clustering (MCL) network-based algorithm for correcting UMI errors and thus precisely counting unique UMIs. mclUMI is implemented with Python.
 
 <figure markdown="span">
-  ![Image title](../img/mcl/mclumi_short.jpg){ width="800" }
+  ![Image title](./img/mcl/mclumi_short.jpg){ width="800" }
   <figcaption><strong>Fig</strong> 1. Schematic of mclUMI for UMI deduplication</figcaption>
 </figure>
 

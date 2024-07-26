@@ -12,7 +12,7 @@
 [![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/mclumi/badges/version.svg)](https://anaconda.org/jianfeng_sun/mclumi)
 ![](https://img.shields.io/docker/automated/2003100127/mclumi.svg)
 ![](https://img.shields.io/github/stars/2003100127/mclumi?logo=GitHub&color=blue)
-[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+[![Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
 [![Downloads](https://pepy.tech/badge/mclumi)](https://pepy.tech/project/mclumi)
 
 <hr>

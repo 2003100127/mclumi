@@ -45,9 +45,9 @@ After running, mclUMI generates two files for UMI deduplication statistics and o
   <figcaption><strong>Fig</strong> 2. Statistics of UMI deduplication using mclUMI</figcaption>
 </figure>
 
-!!! success
+!!! success "Comparison of *`Directional`* between mclUMI and UMI-tools"
 
-    The directional algorithm in the UMI-tools suite has been reported to achieve the best expectancy in identifying PCR duplicates. In mclUMI, we re-implemented the directional method to familiarize ourselves with the UMI deduplication and ensure our further optimization work based on the correct path. We then proposed a more flexible method based on Markov clustering. What does the output of the directional module in both UMI-tools and mclUMI look like? **The same!** Please see below.
+    The directional algorithm in the UMI-tools suite has been reported to achieve the best expectancy in identifying PCR duplicates. In mclUMI, we re-implemented the directional method to familiarize ourselves with the UMI deduplication and ensure our further optimization work based on the correct path. We then proposed a more flexible method based on Markov clustering. What does the output of the directional module in both UMI-tools (see also [the results](https://umi-tools.readthedocs.io/en/latest/QUICK_START.html)) and mclUMI look like? **The same!** Please see below. 
 
 <figure markdown="span">
   ![Image title](../../img/mcl/ave_ed.jpg){ width="800" }

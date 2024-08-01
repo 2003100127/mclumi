@@ -1,12 +1,15 @@
+<figure markdown="span">
+  ![Image title](./img/mcl/mclumi-logo.jpg){ width="150" }
+</figure>
 
-# Welcome to the homepage of ![Image title](./img/mcl/mclumi-logo.jpg){ width="40" }mclUMI!
+# Welcome to the homepage of **mclUMI**!
 
 !!! quote "What is it?"
 
-    For UMI collapsing/deduplication
+    For UMI collapsing/deduplication to improve molecular quantification accuracy.
 
 
-mclUMI is a toolkit developed by using the Markov clustering (MCL) network-based algorithm for correcting UMI errors and thus precisely counting unique UMIs. mclUMI is implemented with Python.
+mclUMI is a toolkit developed by using the Markov clustering (MCL) network-based algorithm for correcting UMI errors and thus precisely counting unique UMIs. Dynamic counting results feature the tool. mclUMI is implemented with Python.
 
 <figure markdown="span">
   ![Image title](./img/mcl/mclumi_short.jpg){ width="800" }

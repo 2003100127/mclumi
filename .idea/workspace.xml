@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/conda.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/conda.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tutorial/Quick start.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/Quick start.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/conda.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/docker.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/pypi.yml" beforeDir="false" />
@@ -395,6 +399,9 @@
       <workItem from="1722221218834" duration="2203000" />
       <workItem from="1722283460796" duration="1941000" />
       <workItem from="1722352530710" duration="7446000" />
+      <workItem from="1722453906711" duration="36000" />
+      <workItem from="1722455674464" duration="812000" />
+      <workItem from="1722518051734" duration="399000" />
     </task>
     <servers />
   </component>

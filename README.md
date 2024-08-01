@@ -45,7 +45,7 @@ mclUMI can be installed in the following ways.
 
 * ![PyPI](https://img.shields.io/badge/-PyPI-000?&logo=PyPI) (https://pypi.org/project/mclumi)
 
-  ```bash
+  ``` shell
   conda create --name mclumi python=3.11
       
   conda activate mclumi
@@ -55,7 +55,7 @@ mclUMI can be installed in the following ways.
   
 * ![Anaconda](https://img.shields.io/badge/-Anaconda-000?&logo=Anaconda) (https://anaconda.org/Jianfeng_Sun/mclumi)
 
-  ```bash
+  ``` shell
   conda create --name mclumi python=3.11
       
   conda activate mclumi
@@ -65,13 +65,13 @@ mclUMI can be installed in the following ways.
   
 * ![Docker](https://img.shields.io/badge/-Docker-000?&logo=Docker) (https://hub.docker.com/repository/docker/2003100127/mclumi/general)
 
-  ```bash
+  ``` shell
   docker pull 2003100127/mclumi:latest
   ```
 
 * ![Github](https://img.shields.io/badge/-Github-000?&logo=Github)
 
-  ```bash
+  ``` shell
   conda create --name mclumi python=3.11
     
   conda activate mclumi
@@ -89,7 +89,7 @@ mclUMI can be installed in the following ways.
 
 * shell
 
-    ```wrap
+    ``` shell
     # convert example.bam to example_bundle.bam in bundle forms as in UMI-tools.
     mclumi bundle -m umi-tools -bfpn ./mclumi/data/example.bam -wd ./mclumi/data/ -vb True
 
@@ -99,7 +99,7 @@ mclUMI can be installed in the following ways.
 
 * python
 
-    ```python
+    ``` python
     import mclumi as mumi
 
     mumi.multipos.run(
@@ -113,7 +113,7 @@ mclUMI can be installed in the following ways.
     ```
 
 ## 📄 Citation
-```angular2html
+``` angular2html
 @article{mclumi,
     title = {mclUMI: Markov clustering of unique molecular identifiers allows removing PCR duplicates dynamically},
     author = {Jianfeng Sun and Adam P. Cribbs},

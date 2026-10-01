@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec5f391-0433-4316-a31e-45b1a58ec0de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/conda.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/conda.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/Quick start.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/Quick start.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/contact.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/contact.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/conda.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/docker.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/.github/workflows/pypi.yml" beforeDir="false" />
@@ -108,6 +106,54 @@
       <change beforePath="$PROJECT_DIR$/git/2003100127/poetry.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/pyproject.toml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/git/2003100127/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Build.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Bundle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Relation.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Relation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/bam/Writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/bam/Writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/Gadgetry.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/Gadgetry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/Gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/Gene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/MultiPos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/MultiPos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/OnePos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/OnePos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/SingleCell.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/SingleCell.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/Tabulate.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/Tabulate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/heterogeneity/Trace.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/heterogeneity/Trace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/Adjacency.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/Adjacency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/Cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/Cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/Clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/Clustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/Directional.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/Directional.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/MarkovClustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/MarkovClustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/method/ReformKit.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/method/ReformKit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/pipeline/Heterogeneity.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/pipeline/Heterogeneity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/deduplicate/pipeline/Simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/deduplicate/pipeline/Simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/fastq/Convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/fastq/Convert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/fastq/Read.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/fastq/Read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/fastq/Write.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/fastq/Write.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/gene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/Adjacency.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/Adjacency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/CC.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/CC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/Edge.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/Edge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/bfs/ConnectedComponent.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/bfs/ConnectedComponent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/dfs/Visit.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/dfs/Visit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/undirected/unweighted/repr/Adjacency.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/undirected/unweighted/repr/Adjacency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/undirected/unweighted/repr/Edge.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/undirected/unweighted/repr/Edge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/graph/undirected/weighted/repr/Adjacency.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/graph/undirected/weighted/repr/Adjacency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/multipos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/multipos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/onepos.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/onepos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/prep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/sc.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/sc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Console.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Console.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Folder.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Folder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Hamming.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Hamming.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Number.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Number.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Parameter.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Parameter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Single.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mclumi/util/Writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mclumi/util/Writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +207,7 @@
     &quot;Python.sc.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/pypropel&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -308,7 +355,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-67fca87a943a-c986f194a52a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11799.259" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -401,7 +449,20 @@
       <workItem from="1722352530710" duration="7446000" />
       <workItem from="1722453906711" duration="36000" />
       <workItem from="1722455674464" duration="812000" />
-      <workItem from="1722518051734" duration="399000" />
+      <workItem from="1722518051734" duration="861000" />
+      <workItem from="1722622386587" duration="1247000" />
+      <workItem from="1743557628765" duration="322000" />
+      <workItem from="1743760553215" duration="606000" />
+      <workItem from="1743764212181" duration="12000" />
+      <workItem from="1743857469558" duration="287000" />
+      <workItem from="1751565174251" duration="12000" />
+      <workItem from="1751565209079" duration="2562000" />
+      <workItem from="1751663744031" duration="1259000" />
+      <workItem from="1751841421422" duration="954000" />
+      <workItem from="1751844709744" duration="1190000" />
+      <workItem from="1751938407420" duration="1187000" />
+      <workItem from="1753017170122" duration="1188000" />
+      <workItem from="1753752466464" duration="2229000" />
     </task>
     <servers />
   </component>

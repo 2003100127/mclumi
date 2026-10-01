@@ -116,15 +116,14 @@ mclUMI can be installed in the following ways.
 ``` angular2html
 @article{mclumi,
     title = {mclUMI: Markov clustering of unique molecular identifiers allows removing PCR duplicates dynamically},
-    author = {Jianfeng Sun and Adam P. Cribbs},
-    doi = {xxx},
+    author = {Jianfeng Sun},
     url = {https://github.com/2003100127/mclumi},
-    year = {2024},
+    year = {2025},
 }
 ```
 
 ## 🏠 Homepage
-[📍Cribbslab](https://www.ndorms.ox.ac.uk/team/adam-cribbs) 
+[Jianfeng Sun](https://www.ndorms.ox.ac.uk/team/jianfeng-sun) 
 
 ## 📧 Reach us
 [![Linkedin Badge](https://img.shields.io/badge/-Jianfeng_Sun-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jianfeng-sun-2ba9b1132)](https://www.linkedin.com/in/jianfeng-sun-2ba9b1132) 

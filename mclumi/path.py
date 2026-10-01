@@ -1,7 +1,7 @@
-__version__ = "v1.0"
-__copyright__ = "Copyright 2024"
+__version__ = "0.0.1"
+__copyright__ = "Copyright 2025"
 __license__ = "GPL v3.0"
-__lab__ = "Cribbslab"
+
 
 import os
 
